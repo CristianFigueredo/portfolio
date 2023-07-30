@@ -11,5 +11,8 @@
   },
   "dependencies": {
     "astro": "^2.9.6"
+  },
+  "devDependencies": {
+    "git-commit-msg-linter": "^5.0.4"
   }
 }
