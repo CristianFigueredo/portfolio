@@ -22,6 +22,11 @@
     "eslint": "^8.46.0",
     "eslint-plugin-astro": "^0.28.0",
     "eslint-plugin-solid": "^0.12.1",
-    "git-commit-msg-linter": "^5.0.4"
-  }
+    "git-commit-msg-linter": "^5.0.4",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3"
+  },
+  "lint-staged": {
+     "*.{ts,tsx,astro}": "eslint --fix"
+   }
 }
