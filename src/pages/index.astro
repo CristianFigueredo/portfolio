@@ -1,8 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import "../global.css";
 ---
 
 <Layout title="Welcome to Astro.">
-  <h1 class="text-red-500">Hello World </h1>      
+  <main>
+    <div id="whoami">
+      <h1>Cristian Figueredo</h1>
+      <h2>Software Engineer</h2>
+    </div>
+  </main>
 </Layout>
 
+<style>
+  #whoami {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;                        
+  }  
+  h1 {
+    font-size: 12vw;
+    font-style: italic;
+    font-family: 'Valencia';
+  }
+  h2 {
+    font-size: 4vw;
+  }
+  
+</style>
