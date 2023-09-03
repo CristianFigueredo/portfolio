@@ -1,3 +1,4 @@
+@import 'node_modules/modern-normalize/modern-normalize.css';
 @font-face {
   font-family: 'Valencia';
   src: url('/fonts/valencia.woff2') format('woff2');
