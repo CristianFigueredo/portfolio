@@ -4,14 +4,14 @@ import "../global.css";
 import { Icon } from "astro-icon";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout>
   <main>
     <section id="whoami">
-      <h1>Cristian Figueredo</h1>
-      <h2>Software Engineer</h2>
+      <h1 id="fullname">Cristian Figueredo</h1>
+      <h2 id="role">Software Engineer</h2>
     </section>
    <section id="about">
-      <h3>ABOUT ME</h3>
+      <h3 >ABOUT ME</h3>
       <p>Crafting user friendly and aesthetic UI designs is not just my profession, it's my passion.</p>
     </section>
    <section id="skills">
@@ -45,11 +45,9 @@ import { Icon } from "astro-icon";
     font-size: max(12vw, 70px);
     font-weight: 100;
     font-family: 'Valencia';
-    margin: 0;
   }
 
   h2 {
-    margin: 0;
     font-size: max(4vw, 23px);
     font-family: "Avenir Regular";
   }
@@ -64,13 +62,13 @@ import { Icon } from "astro-icon";
     font-size: min(15vw, 180px);
     font-family: "Avenir Bold";
     white-space: nowrap;
-    opacity: 0.1;
+    opacity: 0.08;
     margin: 0;
     position: absolute;
     top: 10%;
-    left: 15%;
+    left: -25%;
+    transition: transform 0.9s ease-out 0s;
   }
-
   p {
     font-family: "Avenir Regular";
     font-size: min(3vw, 30px);
@@ -91,3 +89,29 @@ import { Icon } from "astro-icon";
     top: min(12vh, 50px);
   }
 </style>
+
+<script>
+  const headings = document.querySelectorAll("h3")
+  const { documentElement } = document
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle("on-viewport", entry.isIntersecting)
+    });
+  });
+
+  headings.forEach(h3 => observer.observe(h3))
+
+  window.addEventListener("scroll", () => {
+    const scrollPercentage = Math.floor(
+      ((documentElement.scrollTop + documentElement.clientHeight) /
+        documentElement.scrollHeight) * 100,
+    ); 
+    console.log(scrollPercentage)
+    headings.forEach(h3 => {
+       if (h3.classList.contains("on-viewport")) {
+         h3.style.transform = `translateX(${scrollPercentage * 0.8}%)`
+      }
+    })
+  });
+</script>
