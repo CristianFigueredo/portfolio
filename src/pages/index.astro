@@ -5,10 +5,21 @@ import "../global.css";
 
 <Layout title="Welcome to Astro.">
   <main>
-    <div id="whoami">
+    <section id="whoami">
       <h1>Cristian Figueredo</h1>
       <h2>Software Engineer</h2>
-    </div>
+    </section>
+   <section id="about">
+      <h3>ABOUT ME</h3>
+      <p>Crafting user friendly and aesthetic UI designs is not just my profession, it's my passion.</p>
+    </section>
+   <section id="skills">
+      <h3>SKILLS</h3>
+      <p>HTML CSS JS</p>
+    </section>
+   <section id="skills">
+      <h3>CONTACT</h3>
+    </section>
   </main>
 </Layout>
 
@@ -21,16 +32,43 @@ import "../global.css";
     height: 100vh;
     width: 100vw;                        
   }  
+
   h1 {
     font-size: 12vw;
     font-weight: 100;
     font-family: 'Valencia';
     margin: 0;
   }
+
   h2 {
     margin: 0;
     font-size: 4vw;
     font-family: "Avenir Regular";
   }
-  
+
+  #about, #skills, #contact {
+    position: relative;
+    height: 15vh;
+  }
+
+  h3 {
+    font-size: 15vw;
+    font-family: "Avenir Bold";
+    white-space: nowrap;
+    opacity: 0.1;
+    margin: 0;
+    position: absolute;
+    top: 10%;
+    left: 15%;
+  }
+
+  p {
+    font-family: "Avenir Regular";
+    font-size: 3vw;
+    width: 80vw;
+    z-index: 100;
+    position: absolute;
+    margin-left: 10%;
+    top: 20%;
+  }
 </style>
