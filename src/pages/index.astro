@@ -21,10 +21,10 @@ import { Icon } from "astro-icon";
    <section id="contact">
       <h3>CONTACT</h3>
       <div>
-        <Icon pack="mdi" name="github" />
-        <Icon pack="mdi" name="linkedin" />
-        <Icon pack="mdi" name="twitter" />
-        <Icon pack="mdi" name="email" />
+        <Icon name="mdi:github" />
+        <Icon name="mdi:linkedin" />
+        <Icon name="mdi:twitter" />
+        <Icon name="mdi:email" />
       </div>
     </section>
   </main>
@@ -107,11 +107,10 @@ import { Icon } from "astro-icon";
       ((documentElement.scrollTop + documentElement.clientHeight) /
         documentElement.scrollHeight) * 100,
     ); 
-    console.log(scrollPercentage)
     headings.forEach(h3 => {
        if (h3.classList.contains("on-viewport")) {
          h3.style.transform = `translateX(${scrollPercentage * 0.8}%)`
       }
-    })
+    });
   });
 </script>
