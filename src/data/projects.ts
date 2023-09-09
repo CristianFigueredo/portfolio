@@ -6,7 +6,7 @@ export type Project = {
   bottom_label: string
 }
 
-export const PROJECTS_DATA: Array<Project> = [
+const PROJECTS: Array<Project> = [
   {
     title: 'FR Design system',
     subtitle: 'Design system lead  •  Technical PDM',
@@ -30,4 +30,6 @@ export const PROJECTS_DATA: Array<Project> = [
     bottom_label: 'WEB APP',
     id: 3,
   },
-]
+];
+
+export const PROJECTS_DATA = [PROJECTS[0]]

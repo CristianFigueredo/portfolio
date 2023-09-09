@@ -130,10 +130,8 @@ const defaultProject = PROJECTS_DATA[0]
     justify-content: center;
     padding: 61px;
     gap: 20px;
-    background-color: green;
   } 
   #projects-screenshots {
-    background-color: blue;
     width: 55vw;
     height: 500vh;
     position: absolute;
@@ -174,6 +172,7 @@ const defaultProject = PROJECTS_DATA[0]
   }
   #screenshots-placeholder {
     position: relative;
+    margin-top: 80vh;
   }
   #screenshots-placeholder > * {
     position: absolute;
@@ -184,22 +183,21 @@ const defaultProject = PROJECTS_DATA[0]
   #screenshots-placeholder > *:nth-child(1) {
     z-index: 2;
     transform: scale(0.9);
-    top: 33vw 
   }
   #screenshots-placeholder > *:nth-child(2) {
     transform: scale(0.8);
     z-index: 2;
-    top: 30vw;
-    left: 25vw
+    left: 27vw
   }
   #screenshots-placeholder > *:nth-child(3) {
     transform: scale(0.7);
+    top: 15vw;
 
   }
   #screenshots-placeholder > *:nth-child(4) {
     transform: scale(0.6);
-    left: 18vw;
-    top: 6vw;
+    left: 20vw;
+    top: 15vw;
   }
  </style>
 
@@ -207,7 +205,7 @@ const defaultProject = PROJECTS_DATA[0]
   import { PROJECTS_DATA, type Project } from "../data/projects";
 
   const getSP = () => {
-   const { body, documentElement } = document
+   const { body } = document
    const sd = Math.max(body.scrollTop, documentElement.scrollTop);
     const sp = (sd / (documentElement.scrollHeight - documentElement.clientHeight) * 100);
     return sp 
@@ -252,7 +250,7 @@ const defaultProject = PROJECTS_DATA[0]
    let END_OF_PROJECTS_SECTION_Y = x + (window.innerHeight * 4)
    
    let PROJECTS_THRESHOLDS = PROJECTS_DATA.map((_, index) => {
-    return x  + (index * window.innerHeight)
+    return x  + (index * window.innerHeight * 2)
    });
 
   let currentProjectID = 0
@@ -337,26 +335,23 @@ const defaultProject = PROJECTS_DATA[0]
       moverVerdeArriba()
     }
   });
-  const getMinMaxLimits = () => {
-    const min = (documentElement.clientHeight * 100) / documentElement.scrollHeight;
-    const max = (documentElement.clientHeight * 1040) / documentElement.scrollHeight ;
-    return { min, max}
-  }
   let initialSP = null
   // increase the Y movement velocity of phone1 
   window.addEventListener("scroll", () => {
+    const minLimitY = 2000 
+    console.log({ scrollY: window.scrollY })
+    if (window.scrollY < minLimitY) return
+    console.log({ minLimitY })
     let sp = getSP()
-    const { min, max } = getMinMaxLimits()
 
-      if (!(sp >= min && sp <= max)) return
-      if (!initialSP) {
-        initialSP = sp
-      }
-      sp = sp - initialSP
-      phone1.style.transform = `translate(0px,-${(sp) * 15}%)`
-      phone2.style.transform = `translate(0px,-${(sp) * 10}%) scale(0.9)`
-      phone3.style.transform = `translate(0px,-${(sp) * 5}%) scale(0.7)`
-      phone4.style.transform = `translate(0px,-${(sp) * 2}%) scale(0.6)`
+    if (!initialSP) {
+      initialSP = sp
+    }
+    sp = sp - initialSP
+    phone1.style.transform = `translate(0px,-${(sp) * 20}%)`
+    phone2.style.transform = `translate(0px,-${(sp) * 15}%) scale(0.9)`
+    phone3.style.transform = `translate(0px,-${(sp) * 10}%) scale(0.7)`
+    phone4.style.transform = `translate(0px,-${(sp) * 8}%) scale(0.6)`
   })
 </script>
 
