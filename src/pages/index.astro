@@ -211,7 +211,6 @@ const defaultProject = PROJECTS_DATA[0]
     return sp 
   }
 
-  console.log(PROJECTS_DATA)
   const titles = document.querySelectorAll(".transparent-title")
   const ssp = document.querySelector("#screenshots-placeholder")
   const [phone1, phone2, phone3, phone4] = [
@@ -312,6 +311,7 @@ const defaultProject = PROJECTS_DATA[0]
     projectDescriptionEL.style.left = 0 
     verdePosition = "arriba"
   }
+
   window.addEventListener("scroll", () => {
     updateProjectIfNeeded()
 
@@ -336,12 +336,11 @@ const defaultProject = PROJECTS_DATA[0]
     }
   });
   let initialSP = null
-  // increase the Y movement velocity of phone1 
+
   window.addEventListener("scroll", () => {
     const minLimitY = 2000 
-    console.log({ scrollY: window.scrollY })
+
     if (window.scrollY < minLimitY) return
-    console.log({ minLimitY })
     let sp = getSP()
 
     if (!initialSP) {

@@ -30,6 +30,6 @@ const PROJECTS: Array<Project> = [
     bottom_label: 'WEB APP',
     id: 3,
   },
-];
+]
 
 export const PROJECTS_DATA = [PROJECTS[0]]
