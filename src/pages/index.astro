@@ -2,24 +2,47 @@
 import Layout from '../layouts/Layout.astro';
 import "../global.css";
 import { Icon } from "astro-icon";
+import { PROJECTS_DATA } from "../data/projects";
+import { Image } from "astro:assets"; 
+
+const defaultProject = PROJECTS_DATA[0]
+
 ---
 
 <Layout>
   <main>
     <section id="whoami">
       <h1 id="fullname">Cristian Figueredo</h1>
-      <h2 id="role">Software Engineer</h2>
+      <h2 id="role">Mobile Engineer</h2>
     </section>
    <section id="about">
-      <h3 >ABOUT ME</h3>
-      <p>Crafting user friendly and aesthetic UI designs is not just my profession, it's my passion.</p>
+      <h3 class="transparent-title" >ABOUT ME</h3>
+      <p class="description">Crafting user friendly and aesthetic UI designs is not just my profession, it's my passion.</p>
+    </section>
+    <section id="projects">
+      <div class="project-description-container">
+        <p id="project-id">0{defaultProject.id}</p>
+        <h3 id="project-title">{defaultProject.title}</h3>
+        <h4 id="project-subtitle">{defaultProject.subtitle}</h4>
+        <p id='project-description'>{defaultProject.description}</p>
+        <p id="project-bottom-label">{defaultProject.bottom_label}</p>
+      </div>
+      <div id="projects-screenshots">
+        <div id="screenshots-placeholder">
+          <Image width="423" height="852" alt="placeholder" src="/images/screenshots/placeholder.png" /> 
+          <Image width="423" height="852" alt="placeholder" src="/images/screenshots/placeholder.png" /> 
+          <Image width="423" height="852" alt="placeholder" src="/images/screenshots/placeholder.png" /> 
+          <Image width="423" height="852" alt="placeholder" src="/images/screenshots/placeholder.png" /> 
+         </div>
+      </div>
     </section>
    <section id="skills">
-      <h3>SKILLS</h3>
-      <p>React/React Native NodeJS AstroJS NextJS</p>
+      <h3 class="transparent-title">SKILLS</h3>
+      <p class="description">React/React Native NodeJS AstroJS NextJS</p>
     </section>
+    
    <section id="contact">
-      <h3>CONTACT</h3>
+      <h3 class="transparent-title">CONTACT</h3>
       <div>
         <Icon name="mdi:github" />
         <Icon name="mdi:linkedin" />
@@ -58,7 +81,7 @@ import { Icon } from "astro-icon";
     margin-bottom: 80vw;
   }
 
-  h3 {
+  .transparent-title {
     font-size: min(15vw, 180px);
     font-family: "Avenir Bold";
     white-space: nowrap;
@@ -69,7 +92,8 @@ import { Icon } from "astro-icon";
     left: -25%;
     transition: transform 0.9s ease-out 0s;
   }
-  p {
+
+  .description {
     font-family: "Avenir Regular";
     font-size: min(3vw, 30px);
     width: 80vw;
@@ -78,20 +102,125 @@ import { Icon } from "astro-icon";
     margin-left: 10%;
     top: 20%;
   }
+
   [astro-icon] {
     width: min(7vw, 70px);
     height: min(7vw, 70px);
     margin-right: 5vw;
   }
+
   #contact > div {
     position: absolute;
     margin-left: 30%;
     top: min(12vh, 50px);
   }
-</style>
+
+  #projects {
+    width: 100vw;
+    height: 500vh;
+    position: relative;
+  }
+
+  .project-description-container {
+    width: 45vw;
+    height: 100vh;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    padding: 61px;
+    gap: 20px;
+  } 
+  #projects-screenshots {
+    width: 55vw;
+    height: 500vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+
+  #project-id {
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    font-weight: bold;
+    font-size: min(3vh, 30px);
+  }
+
+  #project-bottom-label {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    font-weight: bold;
+  }
+
+  .project-description-container > h3 {
+    font-size: min(8vh, 150px);
+    font-family: "Avenir Regular";
+    margin-bottom: 10px
+  }
+
+  .project-description-container > h4 {
+    font-size: min(3vh, 130px);
+    font-family: "Avenir Regular"
+  }
+
+  .project-description-container > p {
+    font-size: min(2.5vh, 120px);
+    font-family: "Avenir Regular"
+  }
+  #screenshots-placeholder {
+    position: relative;
+    margin-top: 80vh;
+  }
+  #screenshots-placeholder > * {
+    position: absolute;
+    z-index: 1;
+    transition: transform 0.2s ease-out;
+  }
+
+  #screenshots-placeholder > *:nth-child(1) {
+    z-index: 2;
+    transform: scale(0.9);
+  }
+  #screenshots-placeholder > *:nth-child(2) {
+    transform: scale(0.8);
+    z-index: 2;
+    left: 27vw
+  }
+  #screenshots-placeholder > *:nth-child(3) {
+    transform: scale(0.7);
+    top: 15vw;
+
+  }
+  #screenshots-placeholder > *:nth-child(4) {
+    transform: scale(0.6);
+    left: 20vw;
+    top: 15vw;
+  }
+ </style>
 
 <script>
-  const headings = document.querySelectorAll("h3")
+  import { PROJECTS_DATA, type Project } from "../data/projects";
+
+  const getSP = () => {
+   const { body } = document
+   const sd = Math.max(body.scrollTop, documentElement.scrollTop);
+    const sp = (sd / (documentElement.scrollHeight - documentElement.clientHeight) * 100);
+    return sp 
+  }
+
+  const titles = document.querySelectorAll(".transparent-title")
+  const ssp = document.querySelector("#screenshots-placeholder")
+  const [phone1, phone2, phone3, phone4] = [
+    document.querySelector('#screenshots-placeholder > *:nth-child(1)'),
+    document.querySelector('#screenshots-placeholder > *:nth-child(2)'),
+    document.querySelector('#screenshots-placeholder > *:nth-child(3)'),
+    document.querySelector('#screenshots-placeholder > *:nth-child(4)'),
+  ]
+
+
   const { documentElement } = document
 
   const observer = new IntersectionObserver(entries => {
@@ -100,17 +229,128 @@ import { Icon } from "astro-icon";
     });
   });
 
-  headings.forEach(h3 => observer.observe(h3))
+
+  titles.forEach(title => observer.observe(title))
+  observer.observe(ssp)
 
   window.addEventListener("scroll", () => {
-    const scrollPercentage = Math.floor(
-      ((documentElement.scrollTop + documentElement.clientHeight) /
-        documentElement.scrollHeight) * 100,
-    ); 
-    headings.forEach(h3 => {
-       if (h3.classList.contains("on-viewport")) {
-         h3.style.transform = `translateX(${scrollPercentage * 0.8}%)`
+    const scrollPercentage = getSP() 
+    titles.forEach(title => {
+       if (title.classList.contains("on-viewport")) {
+         title.style.transform = `translateX(${scrollPercentage}%)`
       }
     });
   });
+
+  const projectsContainerEL = document.querySelector("#projects-screenshots")
+  const projectDescriptionEL = document.querySelector(".project-description-container")
+
+   let x = projectsContainerEL.getBoundingClientRect().top
+   let END_OF_PROJECTS_SECTION_Y = x + (window.innerHeight * 4)
+   
+   let PROJECTS_THRESHOLDS = PROJECTS_DATA.map((_, index) => {
+    return x  + (index * window.innerHeight * 2)
+   });
+
+  let currentProjectID = 0
+
+  const updateProjectTo = (project: Project) => {
+    const titleEL = document.querySelector("#project-title")
+    const idEL = document.querySelector("#project-id")
+    const descriptionEL = document.querySelector("#project-description")
+    const subtitleEL = document.querySelector("#project-subtitle")
+    const bottomLabelEL = document.querySelector("#project-bottom-label")
+  
+
+    titleEL.textContent = project.title
+    idEL.textContent = "0" + project.id
+    descriptionEL.textContent = project.description
+    subtitleEL.textContent = project.subtitle
+    bottomLabelEL.textContent = project.bottom_label
+  };
+
+  const updateProjectIfNeeded = () => {
+    if (window.scrollY > END_OF_PROJECTS_SECTION_Y || window.scrollY < x) return
+    const currentProjectThreshold = PROJECTS_THRESHOLDS[currentProjectID]
+    const nextProjectThreshold = PROJECTS_THRESHOLDS[currentProjectID + 1]
+
+    if (window.scrollY > nextProjectThreshold) {
+      currentProjectID += 1
+      const nextProject = PROJECTS_DATA[currentProjectID]
+      updateProjectTo(nextProject)
+    } else if (window.scrollY < currentProjectThreshold) {
+      if (currentProjectID > 0) {
+        currentProjectID -= 1
+        updateProjectTo(PROJECTS_DATA[currentProjectID])
+      }
+    }
+  }
+
+  window.addEventListener("resize", () => {
+    x = projectsContainerEL.getBoundingClientRect().top
+    END_OF_PROJECTS_SECTION_Y = x + (window.innerHeight * 4)
+  });
+
+  let verdePosition = "arriba"
+  const fijarVerde = () => {
+      projectDescriptionEL.style.position = "fixed"
+      projectDescriptionEL.style.top = 0 
+      projectDescriptionEL.style.left = 0 
+      verdePosition = "fixed"
+  }
+  const moverVerdeAbajo = () => {
+        projectDescriptionEL.style.top = "400vh"
+        projectDescriptionEL.style.position = "relative" 
+        projectDescriptionEL.style.left = 0 
+        verdePosition = "abajo"
+  }
+
+  const moverVerdeArriba = () => {
+    projectDescriptionEL.style.top = undefined 
+    projectDescriptionEL.style.position = "relative" 
+    projectDescriptionEL.style.left = 0 
+    verdePosition = "arriba"
+  }
+
+  window.addEventListener("scroll", () => {
+    updateProjectIfNeeded()
+
+    if (window.scrollY > x && verdePosition === "arriba") {
+      console.log("hacer  verde fixed")
+      fijarVerde()
+     
+    }
+    if (window.scrollY < END_OF_PROJECTS_SECTION_Y && verdePosition === "abajo") {
+      console.log("hacer verde fixed 2")
+      fijarVerde()
+    }
+  
+    if (window.scrollY > END_OF_PROJECTS_SECTION_Y && verdePosition === "fixed") {
+      console.log("mover verde abajo")
+      moverVerdeAbajo()
+    }
+
+    if (window.scrollY < x && verdePosition === "fixed") {
+      console.log("mover verde arriba")
+      moverVerdeArriba()
+    }
+  });
+  let initialSP = null
+
+  window.addEventListener("scroll", () => {
+    const minLimitY = 2000 
+
+    if (window.scrollY < minLimitY) return
+    let sp = getSP()
+
+    if (!initialSP) {
+      initialSP = sp
+    }
+    sp = sp - initialSP
+    phone1.style.transform = `translate(0px,-${(sp) * 20}%)`
+    phone2.style.transform = `translate(0px,-${(sp) * 15}%) scale(0.9)`
+    phone3.style.transform = `translate(0px,-${(sp) * 10}%) scale(0.7)`
+    phone4.style.transform = `translate(0px,-${(sp) * 8}%) scale(0.6)`
+  })
 </script>
+
