@@ -1,0 +1,83 @@
+#projects {
+  width: 100vw;
+  height: 500vh;
+  position: relative;
+}
+
+.description-container {
+  width: 45vw;
+  height: 100vh;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  padding: 61px;
+  gap: 20px;
+  position: relative;
+}
+#screenshots {
+  width: 55vw;
+  height: 500vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#id {
+  position: absolute;
+  top: 50px;
+  left: 40px;
+  font-weight: bold;
+  font-size: min(3vh, 30px);
+}
+
+#bottom-label {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  font-weight: bold;
+}
+
+.description-container > h3 {
+  font-size: min(8vh, 150px);
+  font-family: 'Avenir Regular';
+  margin-bottom: 10px;
+}
+
+.description-container > h4 {
+  font-size: min(3vh, 130px);
+  font-family: 'Avenir Regular';
+}
+
+.description-container > p {
+  font-size: min(2.5vh, 120px);
+  font-family: 'Avenir Regular';
+}
+#screenshots-placeholder {
+  position: relative;
+  margin-top: 80vh;
+}
+#screenshots-placeholder > * {
+  position: absolute;
+  z-index: 1;
+  transition: transform 0.2s ease-out;
+}
+
+#screenshots-placeholder > *:nth-child(1) {
+  z-index: 2;
+  transform: scale(0.9);
+}
+#screenshots-placeholder > *:nth-child(2) {
+  transform: scale(0.8);
+  z-index: 2;
+  left: 27vw;
+}
+#screenshots-placeholder > *:nth-child(3) {
+  transform: scale(0.7);
+  top: 15vw;
+}
+#screenshots-placeholder > *:nth-child(4) {
+  transform: scale(0.6);
+  left: 20vw;
+  top: 15vw;
+}
