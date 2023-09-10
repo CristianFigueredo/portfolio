@@ -56,6 +56,11 @@ h2 {
   width: min(7vw, 70px);
   height: min(7vw, 70px);
   margin-right: 5vw;
+  transition: transform 0.5s ease-out 0s;
+}
+[astro-icon]:hover {
+
+  transform: scale(1.2);
 }
 
 #contact > div {

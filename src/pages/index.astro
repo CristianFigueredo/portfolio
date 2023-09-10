@@ -4,6 +4,7 @@ import "../global.css";
 import { Icon } from "astro-icon";
 import ProjectsSection from "../components/projects-section/component.astro";
 import "./index.css"
+import { PROFILE_URL } from "../data/social-media";
 ---
 
 <Layout>
@@ -16,7 +17,7 @@ import "./index.css"
       <h3 id="about-title" class="transparent-title" >ABOUT ME</h3>
       <p class="description">Crafting user friendly and aesthetic UI designs is not just my profession, it's my passion.</p>
     </section>
-    <ProjectsSection />
+   <ProjectsSection/>
    <section id="skills">
       <h3 id="skills-title" class="transparent-title">SKILLS</h3>
       <p class="description">React/React Native NodeJS AstroJS NextJS</p>
@@ -24,10 +25,15 @@ import "./index.css"
    <section id="contact">
       <h3 id="contact-title" class="transparent-title">CONTACT</h3>
       <div>
-        <Icon name="mdi:github" />
-        <Icon name="mdi:linkedin" />
-        <Icon name="mdi:twitter" />
-        <Icon name="mdi:email" />
+        <a target="_blank" href={PROFILE_URL.GITHUB}> 
+          <Icon name="mdi:github" />
+        </a>      
+        <a target="_blank" href={PROFILE_URL.LINKEDIN}> 
+          <Icon name="mdi:linkedin" />
+        </a>      
+        <a target="_blank" href={PROFILE_URL.TWITTER}> 
+          <Icon name="mdi:twitter" />
+        </a>      
       </div>
     </section>
   </main>
@@ -40,9 +46,9 @@ import "./index.css"
   const skillsTitle = document.querySelector("#skills-title")
   const contactTitle = document.querySelector("#contact-title")
 
-  const aboutTitleRect = aboutTitle.getBoundingClientRect() 
-  const skillsTitleRect = skillsTitle.getBoundingClientRect() 
-  const contactTitleRect = contactTitle.getBoundingClientRect() 
+  let aboutTitleRect = aboutTitle.getBoundingClientRect() 
+  let skillsTitleRect = skillsTitle.getBoundingClientRect() 
+  let contactTitleRect = contactTitle.getBoundingClientRect() 
 
 
 
@@ -59,6 +65,12 @@ import "./index.css"
 
 
   let aboutTitleOffset, skillsTitleOffset, contactTitleOffset 
+
+  window.addEventListener("resize", () => {
+    aboutTitleRect = aboutTitle.getBoundingClientRect() 
+    skillsTitleRect = skillsTitle.getBoundingClientRect() 
+    contactTitleRect = contactTitle.getBoundingClientRect() 
+  });
 
 
   window.addEventListener("scroll", () => {
