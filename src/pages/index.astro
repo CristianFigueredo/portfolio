@@ -13,16 +13,16 @@ import "./index.css"
       <h2 id="role">Mobile Engineer</h2>
     </section>
    <section id="about">
-      <h3 class="transparent-title" >ABOUT ME</h3>
+      <h3 id="about-title" class="transparent-title" >ABOUT ME</h3>
       <p class="description">Crafting user friendly and aesthetic UI designs is not just my profession, it's my passion.</p>
     </section>
     <ProjectsSection />
    <section id="skills">
-      <h3 class="transparent-title">SKILLS</h3>
+      <h3 id="skills-title" class="transparent-title">SKILLS</h3>
       <p class="description">React/React Native NodeJS AstroJS NextJS</p>
     </section>
    <section id="contact">
-      <h3 class="transparent-title">CONTACT</h3>
+      <h3 id="contact-title" class="transparent-title">CONTACT</h3>
       <div>
         <Icon name="mdi:github" />
         <Icon name="mdi:linkedin" />
@@ -36,7 +36,17 @@ import "./index.css"
 <script>
   import { getPercentageScrolledFromTop } from "../utils/scroll";
 
-  const titles = document.querySelectorAll(".transparent-title")
+  const aboutTitle = document.querySelector("#about-title")
+  const skillsTitle = document.querySelector("#skills-title")
+  const contactTitle = document.querySelector("#contact-title")
+
+  const aboutTitleRect = aboutTitle.getBoundingClientRect() 
+  const skillsTitleRect = skillsTitle.getBoundingClientRect() 
+  const contactTitleRect = contactTitle.getBoundingClientRect() 
+
+
+
+  const titles = [skillsTitle, contactTitle, aboutTitle] 
    
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -47,13 +57,27 @@ import "./index.css"
 
   titles.forEach(title => observer.observe(title))
 
+
+  let aboutTitleOffset, skillsTitleOffset, contactTitleOffset 
+
+
   window.addEventListener("scroll", () => {
     const scrollPercentage = getPercentageScrolledFromTop() 
-    titles.forEach(title => {
-       if (title.classList.contains("on-viewport")) {
-         title.style.transform = `translateX(${scrollPercentage}%)`
-      }
-    });
+
+   if (window.scrollY >= aboutTitleRect.top - window.innerHeight) {
+     if (!aboutTitleOffset) aboutTitleOffset = scrollPercentage 
+     aboutTitle.style.transform = `translateX(${(scrollPercentage - aboutTitleOffset) * 3}%)`
+   }
+
+   if (window.scrollY >= skillsTitleRect.top - window.innerHeight) {
+     if (!skillsTitleOffset) skillsTitleOffset = scrollPercentage 
+     skillsTitle.style.transform = `translateX(-${(scrollPercentage - skillsTitleOffset) * 6}%)`
+   }
+
+   if (window.scrollY >= contactTitleRect.top - window.innerHeight) {
+     if (!contactTitleOffset) contactTitleOffset = scrollPercentage 
+     contactTitle.style.transform = `translateX(${(scrollPercentage - contactTitleOffset) * 3}%)`
+   }
   });
 </script>
 

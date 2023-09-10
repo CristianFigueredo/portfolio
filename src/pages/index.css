@@ -35,8 +35,11 @@ h2 {
   margin: 0;
   position: absolute;
   top: 10%;
-  left: -25%;
   transition: transform 0.9s ease-out 0s;
+}
+
+#skills-title {
+  right: 0;
 }
 
 .description {
