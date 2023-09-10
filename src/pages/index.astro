@@ -1,10 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import "../global.css";
-import { Icon } from "astro-icon";
-import ProjectsSection from "../components/projects-section/component.astro";
-import "./index.css"
-import { PROFILE_URL } from "../data/social-media";
+import Layout from '../layouts/Layout.astro'
+import '../global.css'
+import { Icon } from 'astro-icon'
+import ProjectsSection from '../components/projects-section/component.astro'
+import './index.css'
+import { PROFILE_URL } from '../data/social-media'
 ---
 
 <Layout>
@@ -13,83 +13,86 @@ import { PROFILE_URL } from "../data/social-media";
       <h1 id="fullname">Cristian Figueredo</h1>
       <h2 id="role">Mobile Engineer</h2>
     </section>
-   <section id="about">
-      <h3 id="about-title" class="transparent-title" >ABOUT ME</h3>
-      <p class="description">Crafting user friendly and aesthetic UI designs is not just my profession, it's my passion.</p>
+    <section id="about">
+      <h3 id="about-title" class="transparent-title">ABOUT ME</h3>
+      <p class="description">
+        Crafting user friendly and aesthetic UI designs is not just my
+        profession, it's my passion.
+      </p>
     </section>
-   <ProjectsSection/>
-   <section id="skills">
+    <ProjectsSection />
+    <section id="skills">
       <h3 id="skills-title" class="transparent-title">SKILLS</h3>
       <p class="description">React/React Native NodeJS AstroJS NextJS</p>
     </section>
-   <section id="contact">
+    <section id="contact">
       <h3 id="contact-title" class="transparent-title">CONTACT</h3>
       <div>
-        <a target="_blank" href={PROFILE_URL.GITHUB}> 
+        <a target="_blank" href={PROFILE_URL.GITHUB}>
           <Icon name="mdi:github" />
-        </a>      
-        <a target="_blank" href={PROFILE_URL.LINKEDIN}> 
+        </a>
+        <a target="_blank" href={PROFILE_URL.LINKEDIN}>
           <Icon name="mdi:linkedin" />
-        </a>      
-        <a target="_blank" href={PROFILE_URL.TWITTER}> 
+        </a>
+        <a target="_blank" href={PROFILE_URL.TWITTER}>
           <Icon name="mdi:twitter" />
-        </a>      
+        </a>
       </div>
     </section>
   </main>
 </Layout>
 
 <script>
-  import { getPercentageScrolledFromTop } from "../utils/scroll";
+  import { getPercentageScrolledFromTop } from '../utils/scroll'
 
-  const aboutTitle = document.querySelector("#about-title")
-  const skillsTitle = document.querySelector("#skills-title")
-  const contactTitle = document.querySelector("#contact-title")
+  const aboutTitle = document.querySelector('#about-title')
+  const skillsTitle = document.querySelector('#skills-title')
+  const contactTitle = document.querySelector('#contact-title')
 
-  let aboutTitleRect = aboutTitle.getBoundingClientRect() 
-  let skillsTitleRect = skillsTitle.getBoundingClientRect() 
-  let contactTitleRect = contactTitle.getBoundingClientRect() 
+  let aboutTitleRect = aboutTitle.getBoundingClientRect()
+  let skillsTitleRect = skillsTitle.getBoundingClientRect()
+  let contactTitleRect = contactTitle.getBoundingClientRect()
 
+  const titles = [skillsTitle, contactTitle, aboutTitle]
 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      entry.target.classList.toggle('on-viewport', entry.isIntersecting)
+    })
+  })
 
-  const titles = [skillsTitle, contactTitle, aboutTitle] 
-   
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      entry.target.classList.toggle("on-viewport", entry.isIntersecting)
-    });
-  });
+  titles.forEach((title) => observer.observe(title))
 
+  let aboutTitleOffset, skillsTitleOffset, contactTitleOffset
 
-  titles.forEach(title => observer.observe(title))
+  window.addEventListener('resize', () => {
+    aboutTitleRect = aboutTitle.getBoundingClientRect()
+    skillsTitleRect = skillsTitle.getBoundingClientRect()
+    contactTitleRect = contactTitle.getBoundingClientRect()
+  })
 
+  window.addEventListener('scroll', () => {
+    const scrollPercentage = getPercentageScrolledFromTop()
 
-  let aboutTitleOffset, skillsTitleOffset, contactTitleOffset 
+    if (window.scrollY >= aboutTitleRect.top - window.innerHeight) {
+      if (!aboutTitleOffset) aboutTitleOffset = scrollPercentage
+      aboutTitle.style.transform = `translateX(${
+        (scrollPercentage - aboutTitleOffset) * 3
+      }%)`
+    }
 
-  window.addEventListener("resize", () => {
-    aboutTitleRect = aboutTitle.getBoundingClientRect() 
-    skillsTitleRect = skillsTitle.getBoundingClientRect() 
-    contactTitleRect = contactTitle.getBoundingClientRect() 
-  });
+    if (window.scrollY >= skillsTitleRect.top - window.innerHeight) {
+      if (!skillsTitleOffset) skillsTitleOffset = scrollPercentage
+      skillsTitle.style.transform = `translateX(-${
+        (scrollPercentage - skillsTitleOffset) * 6
+      }%)`
+    }
 
-
-  window.addEventListener("scroll", () => {
-    const scrollPercentage = getPercentageScrolledFromTop() 
-
-   if (window.scrollY >= aboutTitleRect.top - window.innerHeight) {
-     if (!aboutTitleOffset) aboutTitleOffset = scrollPercentage 
-     aboutTitle.style.transform = `translateX(${(scrollPercentage - aboutTitleOffset) * 3}%)`
-   }
-
-   if (window.scrollY >= skillsTitleRect.top - window.innerHeight) {
-     if (!skillsTitleOffset) skillsTitleOffset = scrollPercentage 
-     skillsTitle.style.transform = `translateX(-${(scrollPercentage - skillsTitleOffset) * 6}%)`
-   }
-
-   if (window.scrollY >= contactTitleRect.top - window.innerHeight) {
-     if (!contactTitleOffset) contactTitleOffset = scrollPercentage 
-     contactTitle.style.transform = `translateX(${(scrollPercentage - contactTitleOffset) * 3}%)`
-   }
-  });
+    if (window.scrollY >= contactTitleRect.top - window.innerHeight) {
+      if (!contactTitleOffset) contactTitleOffset = scrollPercentage
+      contactTitle.style.transform = `translateX(${
+        (scrollPercentage - contactTitleOffset) * 3
+      }%)`
+    }
+  })
 </script>
-
