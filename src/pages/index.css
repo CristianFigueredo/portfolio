@@ -8,14 +8,14 @@
   margin-bottom: 20vw;
 }
 
-h1 {
-  font-size: max(12vw, 70px);
+#fullname {
+  font-size: 3rem;
   font-weight: 100;
   font-family: 'Valencia';
 }
 
-h2 {
-  font-size: max(4vw, 23px);
+#role {
+  font-size: 1rem;
   font-family: 'Avenir Regular';
 }
 
@@ -28,28 +28,24 @@ h2 {
 }
 
 .transparent-title {
-  font-size: min(15vw, 180px);
+  font-size: 3rem;
   font-family: 'Avenir Bold';
   white-space: nowrap;
   opacity: 0.08;
-  margin: 0;
   position: absolute;
   top: 10%;
   transition: transform 0.9s ease-out 0s;
 }
 
-#skills-title {
-  right: 0;
-}
-
 .description {
   font-family: 'Avenir Regular';
-  font-size: min(3vw, 30px);
-  width: 80vw;
-  z-index: 100;
+  font-size: 1rem;
+  z-index: 1;
   position: absolute;
-  margin-left: 10%;
-  top: 20%;
+  max-width: 40ch;
+  top: 3ch;
+  text-align: center;
+  left: 2ch;
 }
 
 [astro-icon] {
@@ -66,4 +62,76 @@ h2 {
   position: absolute;
   margin-left: 30%;
   top: min(12vh, 50px);
+}
+
+/* xs (phones, 600px and down) */
+@media (max-width: 600px) {
+  html {
+    background-color: red;
+  }
+}
+
+/* sm (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) {
+  html {
+    background-color: pink;
+  }
+}
+
+/* md (landscape phones, tablets, 768px and up) */
+@media (min-width: 768px) {
+  html {
+    background-color: yellow;
+  }
+  #fullname {
+    font-size: 5rem;
+  }
+  #role {
+    font-size: 2rem;
+  }
+  .description {
+    max-width: 60ch;
+    left: 5ch;
+  }
+  .transparent-title {
+    font-size: 6rem;
+  }
+}
+
+/* lg (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+  html {
+    background-color: blue;
+  }
+  #fullname {
+    font-size: 7rem;
+  }
+  #role {
+    font-size: 2.5rem;
+  }
+  .description {
+    font-size: 1.5rem;
+  }
+}
+
+/* xl (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  html {
+    background-color: purple;
+  }
+}
+
+/* xl (ultra-wide desktops, 1200px and up) */
+@media (min-width: 1536px) {
+  html {
+    background-color: darkorange;
+  }
+ .description {
+    font-size: 2rem;
+    max-width: 60ch;
+    left: 5ch;
+  }
+  .transparent-title {
+    font-size: 8rem;
+  }
 }
