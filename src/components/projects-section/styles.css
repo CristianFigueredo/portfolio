@@ -1,6 +1,6 @@
 #projects {
   width: 100vw;
-  height: 250vh;
+  height: 200vh;
   position: relative;
 }
 
@@ -17,7 +17,7 @@
 }
 #screenshots {
   width: 55vw;
-  height: 500vh;
+  height: 200vh;
   position: absolute;
   right: 0;
   top: 0;

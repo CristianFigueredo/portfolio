@@ -5,7 +5,7 @@
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  margin-bottom: 40vw;
+  margin-bottom: 20vw;
 }
 
 h1 {
@@ -24,7 +24,7 @@ h2 {
 #contact {
   position: relative;
   height: 15vh;
-  margin-bottom: 80vw;
+  margin-bottom: 50vw;
 }
 
 .transparent-title {
