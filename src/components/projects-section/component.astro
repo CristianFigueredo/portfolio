@@ -15,33 +15,38 @@ import './styles.css'
     <p id="bottom-label">Design System</p>
   </div>
   <div id="screenshots">
-    <div id="screenshots-placeholder">
-      {
-        Array.from({ length: 4 }).map(() => (
+    {
+      Array.from({ length: 4 }).map((_, index) => (
+        <div class="screenshot-wrapper">
           <Image
             width="423"
             height="852"
+            class={'screenshot ' + 'screenshot-' + (index + 1)}
             alt="placeholder"
             src="/images/screenshots/placeholder.png"
           />
-        ))
-      }
-    </div>
+        </div>
+      ))
+    }
   </div>
 </section>
 
 <script>
   import { getPercentageScrolledFromTop } from '../../utils/scroll'
 
-  const [phone1, phone2, phone3, phone4] = document.querySelectorAll(
-    '#screenshots-placeholder > *'
-  )
+  const phone1 = document.querySelector('.screenshot-1')
+  const phone2 = document.querySelector('.screenshot-2')
+  const phone3 = document.querySelector('.screenshot-3')
+  const phone4 = document.querySelector('.screenshot-4')
+
   const containerEL = document.querySelector('#projects')
+  const screenshotsContainerEL = document.querySelector('#screenshots')
   const descriptionContainerEL = document.querySelector(
     '.description-container'
   )
 
   let containerRect = containerEL.getBoundingClientRect()
+  let screenshotsContainerRect = screenshotsContainerEL.getBoundingClientRect()
   let CONTAINER_FIXED_THRESHOLD = containerRect.top + window.innerHeight
 
   window.addEventListener('resize', () => {
@@ -69,22 +74,25 @@ import './styles.css'
   let scrolledPercentageOffset
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY < containerRect.top) return
+    if (window.scrollY < screenshotsContainerRect.top - window.innerHeight)
+      return
     let scrolledPercentage = getPercentageScrolledFromTop()
 
     if (!scrolledPercentageOffset) scrolledPercentageOffset = scrolledPercentage
 
     scrolledPercentage = scrolledPercentage - scrolledPercentageOffset
 
-    phone1.style.transform = `translate(0px,-${scrolledPercentage * 20}%)`
-    phone2.style.transform = `translate(0px,-${
-      scrolledPercentage * 15
-    }%) scale(0.9)`
-    phone3.style.transform = `translate(0px,-${
-      scrolledPercentage * 10
-    }%) scale(0.7)`
-    phone4.style.transform = `translate(0px,-${
+    phone1.style.transform = `translate(0px,-${
       scrolledPercentage * 8
+    }%) scale(0.7)`
+    phone2.style.transform = `translate(0px,-${
+      scrolledPercentage * 10
     }%) scale(0.6)`
+    phone3.style.transform = `translate(0px,-${
+      scrolledPercentage * 21
+    }%) scale(0.8)`
+    phone4.style.transform = `translate(0px,-${
+      scrolledPercentage * 16
+    }%) scale(0.75)`
   })
 </script>

@@ -77,21 +77,21 @@ import { PROFILE_URL } from '../data/social-media'
     if (window.scrollY >= aboutTitleRect.top - window.innerHeight) {
       if (!aboutTitleOffset) aboutTitleOffset = scrollPercentage
       aboutTitle.style.transform = `translateX(${
-        (scrollPercentage - aboutTitleOffset)
+        scrollPercentage - aboutTitleOffset
       }%)`
     }
 
     if (window.scrollY >= skillsTitleRect.top - window.innerHeight) {
       if (!skillsTitleOffset) skillsTitleOffset = scrollPercentage
       skillsTitle.style.transform = `translateX(${
-        (scrollPercentage - skillsTitleOffset)
+        scrollPercentage - skillsTitleOffset
       }%)`
     }
 
     if (window.scrollY >= contactTitleRect.top - window.innerHeight) {
       if (!contactTitleOffset) contactTitleOffset = scrollPercentage
       contactTitle.style.transform = `translateX(${
-        (scrollPercentage - contactTitleOffset)
+        scrollPercentage - contactTitleOffset
       }%)`
     }
   })

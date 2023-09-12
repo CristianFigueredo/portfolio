@@ -66,9 +66,6 @@
 
 /* xs (phones, 600px and down) */
 @media (max-width: 600px) {
-  html {
-    background-color: red;
-  }
 }
 
 /* sm (portrait tablets and large phones, 600px and up) */
@@ -126,7 +123,7 @@
   html {
     background-color: darkorange;
   }
- .description {
+  .description {
     font-size: 2rem;
     max-width: 60ch;
     left: 5ch;
