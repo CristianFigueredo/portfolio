@@ -29,6 +29,9 @@
     "prettier-plugin-astro": "^0.12.0"
   },
   "lint-staged": {
-    "*.{ts,tsx,astro}": ["eslint --fix", "prettier -w -u"]
+    "*.{ts,tsx,astro}": [
+      "eslint --fix",
+      "prettier -w -u"
+    ]
   }
 }

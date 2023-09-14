@@ -1,4 +1,4 @@
-#whoami {
+.whoami {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,33 +8,23 @@
   margin-bottom: 20vw;
 }
 
-#fullname {
+.full_name {
   font-size: 3rem;
   font-weight: 100;
   font-family: 'Valencia';
 }
 
-#role {
+.role {
   font-size: 1rem;
   font-family: 'Avenir Regular';
 }
 
-#about,
-#skills,
-#contact {
+.about,
+.skills,
+.contact {
   position: relative;
   height: 15vh;
   margin-bottom: 50vw;
-}
-
-.transparent-title {
-  font-size: 3rem;
-  font-family: 'Avenir Bold';
-  white-space: nowrap;
-  opacity: 0.08;
-  position: absolute;
-  top: 10%;
-  transition: transform 0.9s ease-out 0s;
 }
 
 .description {
@@ -58,7 +48,7 @@
   transform: scale(1.2);
 }
 
-#contact > div {
+.contact > div {
   position: absolute;
   margin-left: 30%;
   top: min(12vh, 50px);
@@ -80,18 +70,15 @@
   html {
     background-color: yellow;
   }
-  #fullname {
+  .full_name {
     font-size: 5rem;
   }
-  #role {
+  .role {
     font-size: 2rem;
   }
   .description {
     max-width: 60ch;
     left: 5ch;
-  }
-  .transparent-title {
-    font-size: 6rem;
   }
 }
 
@@ -100,10 +87,10 @@
   html {
     background-color: blue;
   }
-  #fullname {
+  .full_name {
     font-size: 7rem;
   }
-  #role {
+  .role {
     font-size: 2.5rem;
   }
   .description {
@@ -127,8 +114,5 @@
     font-size: 2rem;
     max-width: 60ch;
     left: 5ch;
-  }
-  .transparent-title {
-    font-size: 8rem;
   }
 }

@@ -1,0 +1,16 @@
+.title {
+  font-size: 3rem;
+  font-family: 'Avenir Bold';
+  white-space: nowrap;
+  opacity: 0.08;
+  transition: transform 0.9s ease-out 0s;
+}
+
+.wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.container {
+  position: relative;
+}
