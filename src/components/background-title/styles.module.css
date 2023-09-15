@@ -1,8 +1,9 @@
 .title {
   font-size: 3rem;
   font-family: 'Avenir Bold';
-  white-space: nowrap;
+  position: absolute;
   opacity: 0.08;
+  display: inline;
   transition: transform 0.9s ease-out 0s;
 }
 
@@ -10,7 +11,12 @@
   position: absolute;
   left: 0;
   top: 0;
+  padding: 5vw;
 }
 .container {
   position: relative;
+  overflow: hidden;
+  height: 10vh;
+  width: 100vw;
+  margin-bottom: 50vh;
 }

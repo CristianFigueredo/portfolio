@@ -1,18 +1,33 @@
-import type { FunctionalComponent } from 'preact'
-import type { ReactNode } from 'preact/compat'
-import css from './styles.module.css'
+import { type PropsWithChildren } from "preact/compat";
+import { useRef } from "preact/hooks";
+import css from "./styles.module.css";
+import { useScroll } from "../../hooks/useScroll";
+import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
 
-type Props = {
-  children: ReactNode
-}
+type TProps = PropsWithChildren<{ text: string }>;
 
-type Component = FunctionalComponent<Props>
+export const BackgroundTitle = ({ children, text }: TProps) => {
+  const title = useRef<HTMLHeadingElement | null>(null);
+  const container = useRef<HTMLElement | null>(null);
+  const offset = useRef(0);
 
-export const BackgroundTitle: Component = ({ children }) => {
+  const { inView } = useIntersectionObserver(container);
+
+  useScroll(document.documentElement, ({ scrollY }) => {
+    if (!title.current || !inView) return;
+    if (offset.current === 0) {
+      offset.current = scrollY;
+    }
+    const percentage = Math.round((offset.current - scrollY) * 100);
+    title.current.style.transform = `translate(${-percentage}%, 0)`;
+  });
+
   return (
-    <section className={css.container}>
-      <h3 className={css.title}>ABOUT ME</h3>
+    <section ref={container} className={css.container}>
+      <h3 ref={title} className={css.title}>
+        {text}
+      </h3>
       <div className={css.wrapper}>{children}</div>
     </section>
-  )
-}
+  );
+};
