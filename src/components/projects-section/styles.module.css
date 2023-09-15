@@ -1,15 +1,19 @@
-#projects {
+.container {
   width: 100vw;
   height: 200vh;
   position: relative;
 }
 
-#screenshots {
+.screenshots {
   width: 100%;
   height: 100vh;
-  position: absolute;
   right: 0;
   top: 0;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  top: 100vh;
 }
 
 .screenshot {
@@ -18,15 +22,7 @@
   height: auto;
 }
 
-#projects {
-  border: solid red 1px;
-}
-
-#screenshots-placeholder {
-  position: relative;
-  background-color: white;
-}
-#screenshot {
+.screenshot {
   transition: transform 0.2s ease-out;
 }
 
@@ -56,13 +52,6 @@
   z-index: 3;
   right: 0;
   margin-top: 30vh;
-}
-
-#screenshots {
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-  top: 100vh;
 }
 
 /* xs (phones, 600px and down) */

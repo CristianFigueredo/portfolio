@@ -39,5 +39,6 @@
   position: relative;
   padding: 2em;
   padding-top: 8em;
+  z-index: 1;
   gap: 1em;
 }
