@@ -1,26 +1,26 @@
-import { type PropsWithChildren } from "preact/compat";
-import { useRef } from "preact/hooks";
-import css from "./styles.module.css";
-import { useScroll } from "../../hooks/useScroll";
-import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
+import { type PropsWithChildren } from 'preact/compat'
+import { useRef } from 'preact/hooks'
+import css from './styles.module.css'
+import { useScroll } from '../../hooks/useScroll'
+import { useIntersectionObserver } from '../../hooks/useIntersectionObserver'
 
-type TProps = PropsWithChildren<{ text: string }>;
+type TProps = PropsWithChildren<{ text: string }>
 
 export const BackgroundTitle = ({ children, text }: TProps) => {
-  const title = useRef<HTMLHeadingElement | null>(null);
-  const container = useRef<HTMLElement | null>(null);
-  const offset = useRef(0);
+  const title = useRef<HTMLHeadingElement | null>(null)
+  const container = useRef<HTMLElement | null>(null)
+  const offset = useRef(0)
 
-  const { inView } = useIntersectionObserver(container);
+  const { inView } = useIntersectionObserver(container)
 
   useScroll(document.documentElement, ({ scrollY }) => {
-    if (!title.current || !inView) return;
+    if (!title.current || !inView) return
     if (offset.current === 0) {
-      offset.current = scrollY;
+      offset.current = scrollY
     }
-    const percentage = Math.round((offset.current - scrollY) * 100);
-    title.current.style.transform = `translate(${-percentage}%, 0)`;
-  });
+    const percentage = Math.round((offset.current - scrollY) * 100)
+    title.current.style.transform = `translate(${-percentage}%, 0)`
+  })
 
   return (
     <section ref={container} className={css.container}>
@@ -29,5 +29,5 @@ export const BackgroundTitle = ({ children, text }: TProps) => {
       </h3>
       <div className={css.wrapper}>{children}</div>
     </section>
-  );
-};
+  )
+}

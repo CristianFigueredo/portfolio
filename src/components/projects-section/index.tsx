@@ -1,25 +1,23 @@
-import css from "./styles.module.css";
-import { ProjectInformation as Information } from "../project-information";
-import { useRef } from "preact/hooks";
-import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
+import css from './styles.module.css'
+import { ProjectInformation as Information } from '../project-information'
+import { useRef } from 'preact/hooks'
+import { useIntersectionObserver } from '../../hooks/useIntersectionObserver'
 
 export const ProjectsSection = () => {
-  const screenshots = useRef<HTMLDivElement | null>(null);
-  const { inView: screenshotsInView } = useIntersectionObserver(screenshots);
+  const screenshots = useRef<HTMLDivElement | null>(null)
+  const { inView: screenshotsInView } = useIntersectionObserver(screenshots)
 
-  console.log("render");
+  console.log('render')
   return (
     <section className={css.container}>
-      <Information
-        display={screenshotsInView ? "block" : "none"}
-      />
+      <Information display={screenshotsInView ? 'block' : 'none'} />
       <div className={css.screenshots} ref={screenshots}>
         {Array.from({ length: 4 }).map((_, index) => (
           <div class="screenshot-wrapper">
             <img
               width="423"
               height="852"
-              class={css.screenshot + " " + css["screenshot-" + (index + 1)]}
+              class={css.screenshot + ' ' + css['screenshot-' + (index + 1)]}
               alt="placeholder"
               src="/images/screenshots/placeholder.png"
             />
@@ -27,8 +25,8 @@ export const ProjectsSection = () => {
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
 // <script>
 // import { getPercentageScrolledFromTop } from '../../utils/scroll'

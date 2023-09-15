@@ -1,14 +1,14 @@
-import CSS from "./styles.module.css";
+import CSS from './styles.module.css'
 
 type TProps = {
-  display: "block" | "none";
-};
+  display: 'block' | 'none'
+}
 
-export const ProjectInformation = ({ display = "none" }: TProps) => {
+export const ProjectInformation = ({ display = 'none' }: TProps) => {
   return (
     <div
       className={CSS.container}
-      style={{ display, position: "fixed", top: 0, left: 0 }}
+      style={{ display, position: 'fixed', top: 0, left: 0 }}
     >
       <p className={CSS.id}>01</p>
       <h3 className={CSS.title}>FR Design system</h3>
@@ -19,5 +19,5 @@ export const ProjectInformation = ({ display = "none" }: TProps) => {
       </p>
       <p className={CSS.bottom_label}>Design System</p>
     </div>
-  );
-};
+  )
+}
