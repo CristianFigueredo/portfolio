@@ -8,8 +8,8 @@ import { round } from '../utils/numbers'
  * @param callback - callback to run on scroll
  */
 export function useScroll(
-  target: MaybeRef<Element | null | undefined> = document.documentElement,
-  callback: (coords: { scrollX: number; scrollY: number }) => void
+  callback: (coords: { scrollX: number; scrollY: number }) => void,
+  target: MaybeRef<Element | null | undefined> = document.documentElement
 ) {
   const getPositions = () => {
     const el = unRef(target)

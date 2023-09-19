@@ -13,7 +13,7 @@ export const BackgroundTitle = ({ children, text }: TProps) => {
 
   const { inView } = useIntersectionObserver(container)
 
-  useScroll(document.documentElement, ({ scrollY }) => {
+  useScroll(({ scrollY }) => {
     if (!title.current || !inView) return
     if (offset.current === 0) {
       offset.current = scrollY
