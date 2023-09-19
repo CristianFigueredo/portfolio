@@ -24,7 +24,8 @@ export const Screenshot: FC<TProps> = ({
     if (!scrollYOffset.current) {
       scrollYOffset.current = scrollY
     }
-    const percentage = Math.round(scrollY * 100) * velocity
+    const percentage =
+      Math.round((scrollY - scrollYOffset.current) * 100) * velocity
 
     image.current.style.transform = `translate(0px,-${percentage}%) scale(0.8)`
   })

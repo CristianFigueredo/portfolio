@@ -13,27 +13,27 @@ export const ProjectsSection = () => {
       <Information display={screenshotsInView ? 'block' : 'none'} />
       <div className={css.screenshots} ref={screenshots}>
         <Screenshot
-          velocity={1}
-          src="/images/screenshots/placeholder.png"
           index={0}
+          velocity={9}
+          src="/images/screenshots/placeholder.png"
           inView={screenshotsInView}
         />
         <Screenshot
-          velocity={2}
-          src="/images/screenshots/placeholder.png"
           index={1}
+          velocity={10}
+          src="/images/screenshots/placeholder.png"
           inView={screenshotsInView}
         />
         <Screenshot
-          velocity={3}
-          src="/images/screenshots/placeholder.png"
           index={2}
+          velocity={6}
+          src="/images/screenshots/placeholder.png"
           inView={screenshotsInView}
         />
         <Screenshot
-          velocity={4}
-          src="/images/screenshots/placeholder.png"
           index={3}
+          velocity={8}
+          src="/images/screenshots/placeholder.png"
           inView={screenshotsInView}
         />
       </div>
