@@ -17,24 +17,28 @@ export const ProjectsSection = () => {
           velocity={9}
           src="/images/screenshots/placeholder.png"
           inView={screenshotsInView}
+          scale={0.8}
         />
         <Screenshot
           index={1}
           velocity={10}
           src="/images/screenshots/placeholder.png"
           inView={screenshotsInView}
+          scale={0.8}
         />
         <Screenshot
           index={2}
           velocity={6}
           src="/images/screenshots/placeholder.png"
           inView={screenshotsInView}
+          scale={0.7}
         />
         <Screenshot
           index={3}
           velocity={8}
           src="/images/screenshots/placeholder.png"
           inView={screenshotsInView}
+          scale={0.7}
         />
       </div>
     </section>

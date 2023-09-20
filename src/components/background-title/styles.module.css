@@ -11,12 +11,39 @@
   position: absolute;
   left: 0;
   top: 0;
-  padding: 5vw;
+  padding: 1em;
 }
+
 .container {
   position: relative;
   overflow: hidden;
   height: 10vh;
   width: 100vw;
   margin-bottom: 50vh;
+}
+
+/* sm (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) {
+  .title {
+    font-size: 6rem;
+  }
+}
+
+/* md (landscape phones, tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* lg (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+  .title {
+    font-size: 7rem;
+  }
+}
+
+/* xl (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* xl (ultra-wide desktops, 1200px and up) */
+@media (min-width: 1536px) {
 }

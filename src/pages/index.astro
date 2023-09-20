@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import '../global.css'
-import { PROFILE_URL } from '../data/social-media'
+import { PROFILE_URL } from '../constants//social-media'
 import { BackgroundTitle } from '../components/background-title/'
 import { ProjectsSection } from '../components/projects-section'
 import { Icon } from 'astro-icon'
@@ -14,17 +14,17 @@ import { Icon } from 'astro-icon'
       <h2 class="role">Mobile Engineer</h2>
     </section>
     <BackgroundTitle text="ABOUT ME" client:only>
-      <p>
+      <p class="description">
         Crafting user friendly and aesthetic UI designs is not just my
         profession, it's my passion.
       </p>
     </BackgroundTitle>
     <ProjectsSection client:only />
     <BackgroundTitle text="SKILLS" client:only>
-      <p>React/React Native NodeJS AstroJS NextJS</p>
+      <p class="description">React/React Native NodeJS AstroJS NextJS</p>
     </BackgroundTitle>
     <BackgroundTitle text="CONTACT" client:only>
-      <div>
+      <div class="contact-container">
         <a target="_blank" href={PROFILE_URL.GITHUB}>
           <Icon name="mdi:github" />
         </a>
@@ -72,8 +72,6 @@ import { Icon } from 'astro-icon'
   .description {
     font-family: 'Avenir Regular';
     font-size: 1rem;
-    z-index: 1;
-    position: absolute;
     max-width: 40ch;
     top: 3ch;
     text-align: center;
@@ -96,62 +94,67 @@ import { Icon } from 'astro-icon'
     top: min(12vh, 50px);
   }
 
-  /* xs (phones, 600px and down) */
-  @media (max-width: 600px) {
-  }
-
   /* sm (portrait tablets and large phones, 600px and up) */
   @media (min-width: 600px) {
-    html {
-      background-color: pink;
+    .full_name {
+      font-size: 3.5rem;
+    }
+    .role {
+      font-size: 1rem;
     }
   }
 
   /* md (landscape phones, tablets, 768px and up) */
   @media (min-width: 768px) {
-    html {
-      background-color: yellow;
-    }
     .full_name {
-      font-size: 5rem;
+      font-size: 4rem;
     }
     .role {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
     .description {
       max-width: 60ch;
       left: 5ch;
+      font-size: 1.2rem;
     }
   }
 
   /* lg (laptops/desktops, 992px and up) */
   @media (min-width: 992px) {
-    html {
-      background-color: blue;
-    }
     .full_name {
-      font-size: 7rem;
+      font-size: 6rem;
     }
     .role {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
     .description {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+      max-width: 50ch;
     }
   }
 
   /* xl (large laptops and desktops, 1200px and up) */
   @media (min-width: 1200px) {
-    html {
-      background-color: purple;
+    [astro-icon] {
+      width: 3em;
+      height: 3em;
+    }
+
+    .contact-container {
+      padding-left: 5vw;
+    }
+
+    .full_name {
+      font-size: 5rem;
+    }
+
+    .role {
+      font-size: 1.5rem;
     }
   }
 
   /* xl (ultra-wide desktops, 1200px and up) */
   @media (min-width: 1536px) {
-    html {
-      background-color: darkorange;
-    }
     .description {
       font-size: 2rem;
       max-width: 60ch;

@@ -8,6 +8,7 @@ type TProps = {
   index: number
   velocity?: number
   inView: boolean
+  scale: number
 }
 
 export const Screenshot: FC<TProps> = ({
@@ -15,6 +16,7 @@ export const Screenshot: FC<TProps> = ({
   src,
   velocity = 1,
   inView,
+  scale,
 }) => {
   const image = useRef<HTMLImageElement | null>(null)
   const scrollYOffset = useRef<number>(0)
@@ -27,7 +29,7 @@ export const Screenshot: FC<TProps> = ({
     const percentage =
       Math.round((scrollY - scrollYOffset.current) * 100) * velocity
 
-    image.current.style.transform = `translate(0px,-${percentage}%) scale(0.8)`
+    image.current.style.transform = `translate(0px,-${percentage}%) scale(${scale})`
   })
   return (
     <img

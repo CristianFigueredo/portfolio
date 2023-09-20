@@ -6,7 +6,7 @@
 }
 
 .screenshots {
-  width: 100%;
+  width: 100vw;
   height: 25vh;
   right: 0;
   top: 0;
@@ -23,35 +23,33 @@
 
 /* sm (portrait tablets and large phones, 600px and up) */
 @media (min-width: 600px) {
-  html {
-    background-color: pink;
-  }
 }
 
 /* md (landscape phones, tablets, 768px and up) */
 @media (min-width: 768px) {
-  html {
-    background-color: yellow;
-  }
 }
 
 /* lg (laptops/desktops, 992px and up) */
 @media (min-width: 992px) {
-  html {
-    background-color: blue;
-  }
 }
 
 /* xl (large laptops and desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  html {
-    background-color: purple;
+  .screenshots {
+    width: 50vw;
+    position: absolute;
+  }
+
+  .container {
+    flex-direction: row;
+    margin-top: 0;
+    margin-bottom: 100vh;
   }
 }
 
 /* xl (ultra-wide desktops, 1200px and up) */
 @media (min-width: 1536px) {
-  html {
-    background-color: darkorange;
+  .screenshots {
+    max-width: 40vw;
   }
 }

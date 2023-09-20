@@ -2,9 +2,6 @@
   position: absolute;
   width: 70%;
   height: auto;
-}
-
-.screenshot {
   transition: transform 0.2s ease-out;
 }
 
@@ -33,4 +30,100 @@
   z-index: 3;
   right: 0;
   margin-top: 30vh;
+}
+
+/* xs (phones, 600px and down) */
+@media (max-width: 600px) {
+}
+
+/* sm (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) {
+  .screenshot {
+    width: 50%;
+  }
+  .screenshot-1 {
+    left: 4vw;
+  }
+
+  .screenshot-2 {
+    right: 0vw;
+  }
+
+  .screenshot-3 {
+    left: 10vw;
+    margin-top: 50vh;
+  }
+
+  .screenshot-4 {
+    right: 10vw;
+    margin-top: 30vh;
+  }
+}
+
+/* md (landscape phones, tablets, 768px and up) */
+@media (min-width: 768px) {
+  .screenshot {
+    width: 50%;
+  }
+}
+
+/* lg (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+  .screenshot {
+    width: 40%;
+  }
+  .screenshot-1 {
+    left: 3vw;
+  }
+
+  .screenshot-2 {
+    right: 0vw;
+  }
+
+  .screenshot-3 {
+    left: 10vw;
+    margin-top: 50vh;
+  }
+
+  .screenshot-4 {
+    right: 18vw;
+    margin-top: 30vh;
+  }
+}
+
+/* xl (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .screenshot {
+    width: 55%;
+  }
+
+  .screenshot-1 {
+    left: 0;
+    z-index: 1;
+  }
+
+  .screenshot-2 {
+    z-index: 1;
+    right: -3vh;
+  }
+
+  .screenshot-3 {
+    z-index: 2;
+    left: 0;
+    margin-top: 50vh;
+  }
+
+  .screenshot-4 {
+    transform: scale(0.75);
+    z-index: 1;
+    right: 0;
+    margin-top: 30vh;
+  }
+}
+
+/* xl (ultra-wide desktops, 1200px and up) */
+@media (min-width: 1536px) {
+  .screenshot {
+    width: 55%;
+  }
 }
