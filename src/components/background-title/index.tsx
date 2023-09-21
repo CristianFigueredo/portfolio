@@ -24,8 +24,8 @@ export const BackgroundTitle = ({
   const isXXSSizeWindow = useMediaQuery(MEDIA_QUERY_BREAKPOINTS.XXL)
 
   useEffect(() => {
-    if (isLargeSizeWindow) speed.current = 300
-    if (isXXSSizeWindow) speed.current = 500
+    if (isLargeSizeWindow) speed.current = 150
+    if (isXXSSizeWindow) speed.current = 300
   }, [isLargeSizeWindow, isXXSSizeWindow])
 
   useScroll(({ scrollY }) => {
