@@ -5,6 +5,7 @@ import { PROFILE_URL } from '../constants//social-media'
 import { BackgroundTitle } from '../components/background-title/'
 import { ProjectsSection } from '../components/projects-section'
 import ScrollDown from '../components/ScrollDown.astro'
+import { XDivider } from '../components/x-divider.tsx'
 import { Icon } from 'astro-icon'
 ---
 
@@ -25,6 +26,7 @@ import { Icon } from 'astro-icon'
     <BackgroundTitle direction="right" text="SKILLS" client:only>
       <p class="description">React/React Native NodeJS AstroJS NextJS</p>
     </BackgroundTitle>
+    <XDivider size="70vh" />
     <BackgroundTitle text="CONTACT" client:only>
       <div class="contact-container align-center">
         <a target="_blank" href={PROFILE_URL.GITHUB}>
