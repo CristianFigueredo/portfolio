@@ -4,6 +4,7 @@ import '../global.css'
 import { PROFILE_URL } from '../constants//social-media'
 import { BackgroundTitle } from '../components/background-title/'
 import { ProjectsSection } from '../components/projects-section'
+import ScrollDown from '../components/ScrollDown.astro'
 import { Icon } from 'astro-icon'
 ---
 
@@ -12,6 +13,7 @@ import { Icon } from 'astro-icon'
     <section class="whoami">
       <h1 class="full_name">Cristian Figueredo</h1>
       <h2 class="role">Mobile Engineer</h2>
+      <ScrollDown />
     </section>
     <BackgroundTitle text="ABOUT ME" client:only>
       <p class="description">
