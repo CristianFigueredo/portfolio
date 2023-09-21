@@ -52,6 +52,7 @@ import { Icon } from 'astro-icon'
     height: 100vh;
     width: 100vw;
     margin-bottom: 20vw;
+    animation: fadeIn 2.5s;
   }
 
   .full_name {
@@ -166,6 +167,14 @@ import { Icon } from 'astro-icon'
       font-size: 2rem;
       max-width: 60ch;
       left: 5ch;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
 </style>
