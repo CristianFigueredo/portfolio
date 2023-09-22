@@ -39,6 +39,7 @@ export const Screenshot: FC<TProps> = ({
       class={`${css.screenshot} ${css[`screenshot-${index + 1}`]}`}
       alt="placeholder"
       src={src}
+      loading="lazy"
     />
   )
 }
