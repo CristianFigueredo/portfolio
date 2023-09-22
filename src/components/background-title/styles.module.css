@@ -1,6 +1,6 @@
 .title {
   font-size: 3.5rem;
-  font-family: 'Avenir Regular';
+  font-family: 'Avenir Bold';
   position: absolute;
   opacity: 0.08;
   white-space: nowrap;
@@ -39,6 +39,6 @@
 /* lg (laptops/desktops, 992px and up) */
 @media (min-width: 992px) {
   .title {
-    font-size: 12rem;
+    font-size: 13rem;
   }
 }
