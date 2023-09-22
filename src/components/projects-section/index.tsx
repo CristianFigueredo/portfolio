@@ -10,7 +10,7 @@ export const ProjectsSection = () => {
 
   return (
     <section className={css.container}>
-      <Information display={screenshotsInView ? 'block' : 'none'} />
+      <Information show={screenshotsInView} />
       <div className={css.screenshots} ref={screenshots}>
         <Screenshot
           index={0}

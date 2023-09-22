@@ -1,23 +1,22 @@
-import CSS from './styles.module.css'
+import { useRef } from 'preact/hooks'
+import css from './styles.module.css'
 
 type TProps = {
-  display: 'block' | 'none'
+  show: boolean
 }
 
-export const ProjectInformation = ({ display = 'none' }: TProps) => {
+export const ProjectInformation = ({ show }: TProps) => {
+  const container = useRef<HTMLDivElement | null>(null)
   return (
-    <div
-      className={CSS.container}
-      style={{ display, position: 'fixed', top: 0, left: 0 }}
-    >
-      <p className={CSS.id}>01</p>
-      <h3 className={CSS.title}>FR Design system</h3>
-      <h4 className={CSS.subtitle}>Design system lead • Technical PDM</h4>
-      <p className={CSS.description}>
+    <div ref={container} className={css.container} style={{ opacity: +show }}>
+      <p className={css.id}>01</p>
+      <h3 className={css.title}>FR Design system</h3>
+      <h4 className={css.subtitle}>Design system lead • Technical PDM</h4>
+      <p className={css.description}>
         Multi brand e-commerce design system for websites and native mobile
         applications
       </p>
-      <p className={CSS.bottom_label}>Design System</p>
+      <p className={css.bottom_label}>Design System</p>
     </div>
   )
 }
