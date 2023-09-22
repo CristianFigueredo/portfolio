@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
   position: relative;
-  margin-top: 100vh;
+  margin-bottom: 120vh;
 }
 
 .screenshots {
@@ -10,8 +10,8 @@
   height: 25vh;
   right: 0;
   top: 0;
-  z-index: 1;
   display: grid;
+  position: relative;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(2, 1fr);
   top: 100vh;

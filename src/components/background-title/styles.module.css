@@ -39,6 +39,13 @@
 /* lg (laptops/desktops, 992px and up) */
 @media (min-width: 992px) {
   .title {
+    font-size: 10rem;
+  }
+}
+
+/* xl (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .title {
     font-size: 13rem;
   }
 }

@@ -1,35 +1,30 @@
 .screenshot {
   position: absolute;
-  width: 70%;
+  width: 68%;
   height: auto;
   transition: transform 0.2s ease-out;
 }
 
 .screenshot-1 {
-  transform: scale(0.7);
-  left: -10vw;
+  left: -5vw;
   z-index: 2;
 }
 
 .screenshot-2 {
-  transform: scale(0.6);
-  right: 0;
-  z-index: 1;
-  right: -3vh;
+  z-index: 2;
+  right: -15vw;
 }
 
 .screenshot-3 {
-  transform: scale(0.8);
-  z-index: 4;
-  left: -10vw;
-  margin-top: 50vh;
+  z-index: 1;
+  left: -8vw;
+  margin-top: 20vh;
 }
 
 .screenshot-4 {
-  transform: scale(0.75);
-  z-index: 3;
-  right: 0;
-  margin-top: 30vh;
+  z-index: 1;
+  right: -10vw;
+  margin-top: 25vh;
 }
 
 /* xs (phones, 600px and down) */
@@ -38,86 +33,80 @@
 
 /* sm (portrait tablets and large phones, 600px and up) */
 @media (min-width: 600px) {
-  .screenshot {
-    width: 50%;
-  }
-  .screenshot-1 {
-    left: 4vw;
-  }
-
-  .screenshot-2 {
-    right: 0vw;
-  }
-
-  .screenshot-3 {
-    left: 10vw;
-    margin-top: 50vh;
-  }
-
-  .screenshot-4 {
-    right: 10vw;
-    margin-top: 30vh;
-  }
 }
 
 /* md (landscape phones, tablets, 768px and up) */
 @media (min-width: 768px) {
-  .screenshot {
-    width: 50%;
-  }
-}
-
-/* lg (laptops/desktops, 992px and up) */
-@media (min-width: 992px) {
-  .screenshot {
-    width: 40%;
-  }
-  .screenshot-1 {
-    left: 3vw;
-  }
-
-  .screenshot-2 {
-    right: 0vw;
-  }
-
-  .screenshot-3 {
-    left: 10vw;
-    margin-top: 50vh;
-  }
-
-  .screenshot-4 {
-    right: 18vw;
-    margin-top: 30vh;
-  }
-}
-
-/* xl (large laptops and desktops, 1200px and up) */
-@media (min-width: 1200px) {
   .screenshot {
     width: 55%;
   }
 
   .screenshot-1 {
     left: 0;
-    z-index: 1;
   }
 
   .screenshot-2 {
-    z-index: 1;
-    right: -3vh;
+    right: 0;
   }
 
   .screenshot-3 {
-    z-index: 2;
     left: 0;
+    margin-top: 20vh;
+  }
+
+  .screenshot-4 {
+    right: 0;
+    margin-top: 25vh;
+  }
+}
+
+/* lg (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+  .screenshot {
+    width: 50%;
+  }
+  .screenshot-1 {
+    left: 0vw;
+  }
+
+  .screenshot-2 {
+    right: 0vw;
+  }
+
+  .screenshot-3 {
+    left: 0vw;
     margin-top: 50vh;
   }
 
   .screenshot-4 {
-    transform: scale(0.75);
+    right: 0vw;
+    margin-top: 40vh;
+  }
+}
+
+/* xl (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .screenshot {
+    width: 65%;
+  }
+
+  .screenshot-1 {
+    left: -5vw;
+    top: 10vh;
+  }
+
+  .screenshot-2 {
+    right: -3vw;
+  }
+
+  .screenshot-3 {
+    left: -5vw;
+    z-index: 1;
+  }
+
+  .screenshot-4 {
     z-index: 1;
     right: 0;
-    margin-top: 30vh;
   }
 }
 

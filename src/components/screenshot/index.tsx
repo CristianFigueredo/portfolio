@@ -34,8 +34,6 @@ export const Screenshot: FC<TProps> = ({
   return (
     <img
       ref={image}
-      width="423"
-      height="852"
       class={`${css.screenshot} ${css[`screenshot-${index + 1}`]}`}
       alt="placeholder"
       src={src}

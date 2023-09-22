@@ -14,31 +14,31 @@ export const ProjectsSection = () => {
       <div className={css.screenshots} ref={screenshots}>
         <Screenshot
           index={0}
-          velocity={9}
+          velocity={12}
           src="/images/screenshots/hugs-dating/main.png"
           inView={screenshotsInView}
-          scale={0.8}
+          scale={0.9}
         />
         <Screenshot
           index={1}
-          velocity={10}
+          velocity={8}
           src="/images/screenshots/hugs-dating/explore.png"
           inView={screenshotsInView}
           scale={0.8}
         />
         <Screenshot
           index={2}
-          velocity={6}
+          velocity={7}
           src="/images/screenshots/hugs-dating/chat.png"
           inView={screenshotsInView}
           scale={0.7}
         />
         <Screenshot
           index={3}
-          velocity={8}
+          velocity={5}
           src="/images/screenshots/hugs-dating/profile.png"
           inView={screenshotsInView}
-          scale={0.7}
+          scale={0.68}
         />
       </div>
     </section>
