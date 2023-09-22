@@ -15,28 +15,28 @@ export const ProjectsSection = () => {
         <Screenshot
           index={0}
           velocity={9}
-          src="/images/screenshots/placeholder.png"
+          src="/images/screenshots/hugs-dating/main.png"
           inView={screenshotsInView}
           scale={0.8}
         />
         <Screenshot
           index={1}
           velocity={10}
-          src="/images/screenshots/placeholder.png"
+          src="/images/screenshots/hugs-dating/explore.png"
           inView={screenshotsInView}
           scale={0.8}
         />
         <Screenshot
           index={2}
           velocity={6}
-          src="/images/screenshots/placeholder.png"
+          src="/images/screenshots/hugs-dating/chat.png"
           inView={screenshotsInView}
           scale={0.7}
         />
         <Screenshot
           index={3}
           velocity={8}
-          src="/images/screenshots/placeholder.png"
+          src="/images/screenshots/hugs-dating/profile.png"
           inView={screenshotsInView}
           scale={0.7}
         />

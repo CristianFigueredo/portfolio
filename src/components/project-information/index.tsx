@@ -10,13 +10,13 @@ export const ProjectInformation = ({ show }: TProps) => {
   return (
     <div ref={container} className={css.container} style={{ opacity: +show }}>
       <p className={css.id}>01</p>
-      <h3 className={css.title}>FR Design system</h3>
-      <h4 className={css.subtitle}>Design system lead • Technical PDM</h4>
+      <h3 className={css.title}>Hugs Dating</h3>
+      <h4 className={css.subtitle}>Team Lead & Developer</h4>
       <p className={css.description}>
-        Multi brand e-commerce design system for websites and native mobile
-        applications
+        The aim of the app is to bring together people with and without
+        disability
       </p>
-      <p className={css.bottom_label}>Design System</p>
+      <p className={css.bottom_label}>Android & iOS Application</p>
     </div>
   )
 }
