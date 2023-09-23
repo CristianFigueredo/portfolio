@@ -16,7 +16,7 @@ export const BackgroundTitle = ({
   const title = useRef<HTMLHeadingElement | null>(null)
   const container = useRef<HTMLElement | null>(null)
   const offset = useRef(0)
-  const speed = useRef(100)
+  const speed = useRef(150)
 
   const { inView } = useIntersectionObserver(container)
 
