@@ -33,6 +33,7 @@
     "*.{ts,tsx,astro}": [
       "eslint --fix",
       "prettier -w -u"
-    ]
+    ],
+    "*.css": "prettier -w -u"
   }
 }

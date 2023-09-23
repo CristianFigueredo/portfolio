@@ -17,22 +17,6 @@
   top: 100vh;
 }
 
-/* xs (phones, 600px and down) */
-@media (max-width: 600px) {
-}
-
-/* sm (portrait tablets and large phones, 600px and up) */
-@media (min-width: 600px) {
-}
-
-/* md (landscape phones, tablets, 768px and up) */
-@media (min-width: 768px) {
-}
-
-/* lg (laptops/desktops, 992px and up) */
-@media (min-width: 992px) {
-}
-
 /* xl (large laptops and desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .screenshots {
