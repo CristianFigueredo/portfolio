@@ -2,29 +2,33 @@
   position: absolute;
   width: 68%;
   height: auto;
-  transition: transform 0.2s ease-out;
+  transition: transform 0.8s ease-out;
 }
 
 .screenshot-1 {
   left: -5vw;
   z-index: 2;
+  transform: scale(0.9);
 }
 
 .screenshot-2 {
   z-index: 2;
   right: -15vw;
+  transform: scale(0.8);
 }
 
 .screenshot-3 {
   z-index: 1;
   left: -8vw;
   margin-top: 20vh;
+  transform: scale(0.7);
 }
 
 .screenshot-4 {
   z-index: 1;
   right: -10vw;
   margin-top: 25vh;
+  transform: scale(0.68);
 }
 
 /* xs (phones, 600px and down) */
