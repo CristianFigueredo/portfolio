@@ -1,48 +1,41 @@
 .screenshot {
-  position: absolute;
-  width: 68%;
+  top: 0;
+  width: 65%;
   height: auto;
+  position: absolute;
   transition: transform 0.8s ease-out;
 }
 
 .screenshot-1 {
-  left: -5vw;
+  left: -6vw;
   z-index: 2;
   transform: scale(0.9);
 }
 
 .screenshot-2 {
   z-index: 2;
-  right: -15vw;
+  right: -9vw;
   transform: scale(0.8);
 }
 
 .screenshot-3 {
   z-index: 1;
-  left: -8vw;
-  margin-top: 20vh;
+  top: 25vh;
+  left: -6vw;
   transform: scale(0.7);
 }
 
 .screenshot-4 {
   z-index: 1;
-  right: -10vw;
-  margin-top: 25vh;
+  top: 25vh;
+  right: -9vw;
   transform: scale(0.68);
-}
-
-/* xs (phones, 600px and down) */
-@media (max-width: 600px) {
-}
-
-/* sm (portrait tablets and large phones, 600px and up) */
-@media (min-width: 600px) {
 }
 
 /* md (landscape phones, tablets, 768px and up) */
 @media (min-width: 768px) {
   .screenshot {
-    width: 55%;
+    width: 50%;
   }
 
   .screenshot-1 {
@@ -55,12 +48,12 @@
 
   .screenshot-3 {
     left: 0;
-    margin-top: 20vh;
+    margin-top: 10vh;
   }
 
   .screenshot-4 {
     right: 0;
-    margin-top: 25vh;
+    margin-top: 15vh;
   }
 }
 
@@ -74,24 +67,24 @@
   }
 
   .screenshot-2 {
-    right: 0vw;
+    right: 0;
   }
 
   .screenshot-3 {
-    left: 0vw;
-    margin-top: 50vh;
+    left: 0;
+    margin-top: 25vh;
   }
 
   .screenshot-4 {
-    right: 0vw;
-    margin-top: 40vh;
+    right: 0;
+    margin-top: 20vh;
   }
 }
 
 /* xl (large laptops and desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .screenshot {
-    width: 65%;
+    width: 60%;
   }
 
   .screenshot-1 {
@@ -110,7 +103,8 @@
 
   .screenshot-4 {
     z-index: 1;
-    right: 0;
+    margin-top: 25vh;
+    right: -3vw;
   }
 }
 

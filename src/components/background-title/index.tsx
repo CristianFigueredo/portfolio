@@ -1,4 +1,4 @@
-import { type PropsWithChildren } from 'preact/compat'
+import { type FC, type PropsWithChildren } from 'preact/compat'
 import { useEffect, useRef } from 'preact/hooks'
 import css from './styles.module.css'
 import { useScroll } from '../../hooks/useScroll'
@@ -8,11 +8,11 @@ import { MEDIA_QUERY_BREAKPOINTS } from '../../constants/media-query'
 
 type TProps = PropsWithChildren<{ text: string; direction?: 'left' | 'right' }>
 
-export const BackgroundTitle = ({
+export const BackgroundTitle: FC<TProps> = ({
   children,
   text,
   direction = 'left',
-}: TProps) => {
+}) => {
   const title = useRef<HTMLHeadingElement | null>(null)
   const container = useRef<HTMLElement | null>(null)
   const offset = useRef(0)

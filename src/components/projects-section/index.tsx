@@ -1,46 +1,28 @@
 import css from './styles.module.css'
-import { ProjectInformation as Information } from '../project-information'
-import { useRef } from 'preact/hooks'
-import { useIntersectionObserver } from '../../hooks/useIntersectionObserver'
-import { Screenshot } from '../screenshot'
+import { Screenshots } from '../screenshots'
+import { data as projects } from '../../constants/projects'
+import { useState } from 'preact/hooks'
 
 export const ProjectsSection = () => {
-  const screenshots = useRef<HTMLDivElement | null>(null)
-  const { inView: screenshotsInView } = useIntersectionObserver(screenshots)
+  const [showInformation, setShowInformation] = useState(false)
+  const [currentGroupOnView, setCurrentGroupOnView] = useState(0)
+
+  const { id, title, subtitle, description, bottom_label } =
+    projects[currentGroupOnView]
 
   return (
-    <section className={css.container}>
-      <Information show={screenshotsInView} />
-      <div className={css.screenshots} ref={screenshots}>
-        <Screenshot
-          index={0}
-          velocity={12}
-          src="/images/screenshots/hugs-dating/main.png"
-          inView={screenshotsInView}
-          scale={0.9}
-        />
-        <Screenshot
-          index={1}
-          velocity={8}
-          src="/images/screenshots/hugs-dating/explore.png"
-          inView={screenshotsInView}
-          scale={0.8}
-        />
-        <Screenshot
-          index={2}
-          velocity={7}
-          src="/images/screenshots/hugs-dating/chat.png"
-          inView={screenshotsInView}
-          scale={0.7}
-        />
-        <Screenshot
-          index={3}
-          velocity={5}
-          src="/images/screenshots/hugs-dating/profile.png"
-          inView={screenshotsInView}
-          scale={0.68}
-        />
+    <section className={css.main_container}>
+      <div className={css.container} style={{ opacity: +showInformation }}>
+        <p className={css.id}>{id}</p>
+        <h3 className={css.title}>{title}</h3>
+        <h4 className={css.subtitle}>{subtitle}</h4>
+        <p className={css.description}>{description}</p>
+        <p className={css.bottom_label}>{bottom_label}</p>
       </div>
+      <Screenshots
+        onVisibilityChange={setShowInformation}
+        onVisibleGroupChange={setCurrentGroupOnView}
+      />
     </section>
   )
 }

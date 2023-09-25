@@ -6,37 +6,31 @@ import css from './styles.module.css'
 type TProps = {
   src: string
   index: number
-  velocity?: number
-  inView: boolean
+  speed: number
   scale: number
+  accelerate: boolean
 }
 
-export const Screenshot: FC<TProps> = ({
-  index,
-  src,
-  velocity = 1,
-  inView,
-  scale,
-}) => {
+export const Screenshot: FC<TProps> = (props) => {
   const image = useRef<HTMLImageElement | null>(null)
   const scrollYOffset = useRef<number>(0)
 
   useScroll(({ scrollY }) => {
-    if (!image.current || !inView) return
+    if (!image.current || !props.accelerate) return
     if (!scrollYOffset.current) {
       scrollYOffset.current = scrollY
     }
     const percentage =
-      Math.round((scrollY - scrollYOffset.current) * 100) * velocity
+      Math.round((scrollY - scrollYOffset.current) * 100) * props.speed
 
-    image.current.style.transform = `translate(0px,-${percentage}%) scale(${scale})`
+    image.current.style.transform = `translate(0px,-${percentage}%) scale(${props.scale})`
   })
   return (
     <img
       ref={image}
-      class={`${css.screenshot} ${css[`screenshot-${index + 1}`]}`}
+      class={`${css.screenshot} ${css[`screenshot-${props.index + 1}`]}`}
       alt="placeholder"
-      src={src}
+      src={props.src}
       loading="lazy"
     />
   )

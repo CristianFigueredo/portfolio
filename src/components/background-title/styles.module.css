@@ -1,5 +1,5 @@
 .title {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-family: 'Avenir Bold';
   position: absolute;
   opacity: 0.08;
@@ -40,12 +40,5 @@
 @media (min-width: 992px) {
   .title {
     font-size: 10rem;
-  }
-}
-
-/* xl (large laptops and desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  .title {
-    font-size: 13rem;
   }
 }

@@ -1,0 +1,20 @@
+.screenshots {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  position: relative;
+}
+
+/* xl (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .screenshots {
+    width: 50vw;
+  }
+}
+
+/* xl (ultra-wide desktops, 1200px and up) */
+@media (min-width: 1536px) {
+  .screenshots {
+    max-width: 40vw;
+  }
+}
