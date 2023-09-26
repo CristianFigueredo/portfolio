@@ -22,7 +22,7 @@ export const data: Array<Project> = [
     id: 1,
     screenshots: {
       folder: 'hugs-dating',
-      files: ['explore.png', 'chat.png', 'profile.png', 'main.png'],
+      files: ['main.png', 'explore.png', 'profile.png', 'chat.png'],
     },
   },
   {
@@ -34,7 +34,7 @@ export const data: Array<Project> = [
     id: 2,
     screenshots: {
       folder: 'little-inka',
-      files: ['home.png', 'contact.png', 'home.png', 'products.png'],
+      files: ['home.png', 'products.png', 'menu.png', 'contact.png'],
     },
   },
   {
@@ -46,7 +46,7 @@ export const data: Array<Project> = [
     id: 3,
     screenshots: {
       folder: 'corriere-dell-italianita',
-      files: ['paywall.png', 'subscriptions.png', 'post.png', 'settings.png'],
+      files: ['home.png', 'subscriptions.png', 'post.png', 'settings.png'],
     },
   },
 ]
