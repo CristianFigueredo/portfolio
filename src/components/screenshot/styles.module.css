@@ -84,7 +84,7 @@
 /* xl (large laptops and desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .screenshot {
-    width: 60%;
+    width: 65%;
   }
 
   .screenshot-1 {
