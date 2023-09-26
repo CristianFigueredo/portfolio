@@ -15,14 +15,38 @@ export const SCREENSHOTS_FOLDER_PATH = '/images/screenshots'
 export const data: Array<Project> = [
   {
     title: 'Hugs Dating',
-    subtitle: 'team lead & developer',
+    subtitle: 'Team Lead & Developer',
     description:
-      'the aim of the app is to bring together people with and without disability',
-    bottom_label: 'android & ios application',
+      'The aim of the app is to bring together people with and without disability',
+    bottom_label: 'Android & iOS',
     id: 1,
     screenshots: {
       folder: 'hugs-dating',
       files: ['explore.png', 'chat.png', 'profile.png', 'main.png'],
+    },
+  },
+  {
+    title: 'Little Inka',
+    subtitle: 'Team Lead & Developer',
+    description:
+      "Bellinzona's (Canton of Ticino - Switzerland) first takeaway dedicated to the world of poke and sushi",
+    bottom_label: 'Android & iOS',
+    id: 2,
+    screenshots: {
+      folder: 'little-inka',
+      files: ['home.png', 'contact.png', 'home.png', 'products.png'],
+    },
+  },
+  {
+    title: "Corriere Dell 'Italianità",
+    subtitle: 'Team lead & Developer',
+    description:
+      'Is an independent, nonpartisan, nondenominational, ideology-free digital media, published by the Corriere degli Italiani Association for Italianism',
+    bottom_label: 'Android & iOS',
+    id: 3,
+    screenshots: {
+      folder: 'corriere-dell-italianita',
+      files: ['paywall.png', 'subscriptions.png', 'post.png', 'settings.png'],
     },
   },
 ]
