@@ -16,7 +16,7 @@ export const BackgroundTitle: FC<TProps> = ({
   const title = useRef<HTMLHeadingElement | null>(null)
   const container = useRef<HTMLElement | null>(null)
   const offset = useRef(0)
-  const speed = useRef(150)
+  const speed = useRef(200)
 
   const { inView } = useIntersectionObserver(container)
 
@@ -24,7 +24,7 @@ export const BackgroundTitle: FC<TProps> = ({
   const isXXSSizeWindow = useMediaQuery(MEDIA_QUERY_BREAKPOINTS.XXL)
 
   useEffect(() => {
-    if (isLargeSizeWindow) speed.current = 150
+    if (isLargeSizeWindow) speed.current = 250
     if (isXXSSizeWindow) speed.current = 300
   }, [isLargeSizeWindow, isXXSSizeWindow])
 
