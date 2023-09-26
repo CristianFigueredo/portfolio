@@ -1,40 +1,3 @@
-.main_container {
-  width: 100vw;
-  height: auto;
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.screenshots {
-  width: 100vw;
-  height: 25vh;
-  right: 0;
-  top: 0;
-  display: grid;
-  position: relative;
-}
-
-/* xl (large laptops and desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  .screenshots {
-    width: 45vw;
-  }
-
-  .main_container {
-    flex-direction: row;
-    margin-top: 0;
-    margin-bottom: 100vh;
-  }
-}
-
-/* xl (ultra-wide desktops, 1200px and up) */
-@media (min-width: 1536px) {
-  .screenshots {
-    max-width: 40vw;
-  }
-}
-
 .title {
   font-size: 2.5rem;
   font-family: 'Avenir Regular';
@@ -49,7 +12,7 @@
 .description {
   font-size: 1rem;
   font-family: 'Avenir Regular';
-  max-width: 50ch;
+  max-width: 40ch;
 }
 
 .bottom_label {
@@ -94,13 +57,13 @@
   }
 
   .title {
-    font-size: 4.5rem;
-    padding-bottom: 0.5em;
+    font-size: 4rem;
+    padding-bottom: 0;
     padding-top: 2em;
   }
 
   .subtitle {
-    font-size: 2rem;
+    font-size: 1.4rem;
     padding-bottom: 0.5em;
   }
 
@@ -138,5 +101,42 @@
   }
   100% {
     opacity: 0;
+  }
+}
+
+.main_container {
+  width: 100vw;
+  height: auto;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.screenshots {
+  width: 100vw;
+  height: 25vh;
+  right: 0;
+  top: 0;
+  display: grid;
+  position: relative;
+}
+
+/* xl (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .screenshots {
+    width: 45vw;
+  }
+
+  .main_container {
+    flex-direction: row;
+    margin-top: 0;
+    margin-bottom: 100vh;
+  }
+}
+
+/* xl (ultra-wide desktops, 1200px and up) */
+@media (min-width: 1536px) {
+  .screenshots {
+    max-width: 40vw;
   }
 }
