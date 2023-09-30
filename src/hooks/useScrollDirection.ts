@@ -2,10 +2,10 @@ import { useState, useEffect } from 'preact/hooks'
 
 const THRESHOLD = 0
 
-type DIRECTION = 'up' | 'down'
+type TDirection = 'up' | 'down'
 
-export const useScrollDirection = (): DIRECTION => {
-  const [direction, setDirection] = useState<DIRECTION>('down')
+export const useScrollDirection = (): TDirection => {
+  const [direction, setDirection] = useState<TDirection>('down')
 
   useEffect(() => {
     let lastScrollY = window.scrollY,
