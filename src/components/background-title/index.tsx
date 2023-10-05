@@ -1,9 +1,7 @@
 import { type FC, type PropsWithChildren } from 'preact/compat'
 import { useEffect, useRef } from 'preact/hooks'
 import css from './styles.module.css'
-import { useScroll } from '../../hooks/useScroll'
-import { useIntersectionObserver } from '../../hooks/useIntersectionObserver'
-import { useMediaQuery } from '../../hooks/useMediaQuery'
+import { useIntersectionObserver, useScroll, useMediaQuery } from '../../hooks'
 import { MEDIA_QUERY_BREAKPOINTS } from '../../constants/media-query'
 
 type TProps = PropsWithChildren<{ text: string; direction?: 'left' | 'right' }>
