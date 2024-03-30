@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "astro": "astro"
   },
+  "license": "MIT",
   "dependencies": {
     "@astrojs/preact": "^3.0.0",
     "@astrojs/vercel": "^5.0.1",
