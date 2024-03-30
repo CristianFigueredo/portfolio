@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'preact/compat'
+import type { CSSProperties } from 'react'
 
 type TProps = {
   size: CSSProperties['marginBottom']

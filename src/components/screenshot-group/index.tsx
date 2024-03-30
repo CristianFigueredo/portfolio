@@ -1,6 +1,5 @@
 import css from './styles.module.css'
-import type { FC } from 'preact/compat'
-import { useRef, useEffect } from 'preact/hooks'
+import { type FC, useRef, useEffect } from 'react'
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver'
 import { SCREENSHOTS_FOLDER_PATH } from '../../constants/projects'
 import { Screenshot } from '../screenshot/'

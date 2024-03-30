@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'preact/hooks'
+import { useEffect, useState } from 'react'
 
 /**
  * Reactive media query hook that returns the truthy value of the media query.

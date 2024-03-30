@@ -1,7 +1,7 @@
+import { useState } from 'react'
 import css from './styles.module.css'
 import { Screenshots } from '../screenshots'
 import { data as projects } from '../../constants/projects'
-import { useState } from 'preact/hooks'
 
 export const ProjectsSection = () => {
   const [showInformation, setShowInformation] = useState(false)

@@ -1,5 +1,4 @@
-import { type FC, type PropsWithChildren } from 'preact/compat'
-import { useEffect, useRef } from 'preact/hooks'
+import { type FC, type PropsWithChildren, useRef, useEffect } from 'react'
 import css from './styles.module.css'
 import { useIntersectionObserver, useScroll, useMediaQuery } from '../../hooks'
 import { MEDIA_QUERY_BREAKPOINTS } from '../../constants/media-query'

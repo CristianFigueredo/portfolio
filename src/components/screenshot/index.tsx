@@ -1,5 +1,4 @@
-import { useRef } from 'preact/hooks'
-import type { FC } from 'preact/compat'
+import { type FC, useRef } from 'react'
 import { useScroll } from '../../hooks/useScroll'
 import css from './styles.module.css'
 

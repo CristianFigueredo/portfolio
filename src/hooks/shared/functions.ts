@@ -1,4 +1,4 @@
-import type { MutableRefObject } from 'preact/compat'
+import type { MutableRefObject } from 'react'
 
 import type { MaybeRef } from './types'
 

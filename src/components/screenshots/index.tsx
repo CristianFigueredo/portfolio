@@ -1,10 +1,9 @@
-import { useEffect, useRef, useState } from 'preact/hooks'
+import { useEffect, useRef, useState, FC } from 'react'
 import { data as projects } from '../../constants/projects'
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver'
 import { useScrollDirection } from '../../hooks/useScrollDirection'
 import { noop } from '../../hooks/shared'
 import { ScreenshotGroup } from '../screenshot-group'
-import type { FC } from 'preact/compat'
 
 type TProps = {
   onVisibilityChange?: (visibility: boolean) => void

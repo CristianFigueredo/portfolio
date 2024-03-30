@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'preact/hooks'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { type MaybeRef, noop, unRef } from './shared'
 import { useIsSupported } from './useIsSupported'
 
