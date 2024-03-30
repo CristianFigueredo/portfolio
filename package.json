@@ -14,10 +14,14 @@
     "@astrojs/preact": "^3.0.0",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^5.0.1",
+    "@tabler/icons-react": "^3.1.0",
     "astro": "^3.0.7",
     "astro-icon": "^0.8.1",
+    "clsx": "^2.1.0",
+    "framer-motion": "^11.0.24",
     "modern-normalize": "^2.0.0",
     "preact": "^10.17.1",
+    "tailwind-merge": "^2.2.2",
     "tailwindcss": "^3.4.3"
   },
   "devDependencies": {
