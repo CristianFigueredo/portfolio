@@ -2,13 +2,13 @@
 import Layout from '../layouts/Layout.astro'
 import '../global.css'
 import { PROFILE_URL } from '../constants/social-media'
-import { BackgroundTitle, ProjectsSection, XDivider } from '../components'
+import { BackgroundTitle, ProjectsSection, XDivider, Header } from '../components'
 import ScrollDown from '../components/ScrollDown.astro'
 import { Icon } from 'astro-icon'
 ---
-
 <Layout>
   <main>
+    <Header  client:only/>
     <section class="whoami">
       <h1 class="full_name">Cristian Figueredo</h1>
       <h2 class="role">Mobile Engineer</h2>
@@ -53,9 +53,8 @@ import { Icon } from 'astro-icon'
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    height: 80vh;
     width: 100vw;
-    margin-bottom: 20vw;
     animation: fadeIn 2.5s;
   }
 
