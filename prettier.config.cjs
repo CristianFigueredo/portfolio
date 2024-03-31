@@ -1,5 +1,5 @@
 /** @type {import("prettier").Options} */
-module.exports = {
+export default {
   trailingComma: 'es5',
   semi: false,
   singleQuote: true,
