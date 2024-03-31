@@ -4,6 +4,7 @@ export * from './screenshot'
 export * from './screenshot-group'
 export * from './screenshots'
 export * from './x-divider'
-export * from "./Button"
-export * from "./Header"
-export * from "./Logo"
+export * from './Button'
+export * from './Header'
+export * from './Logo'
+export * from './BackgroundBeams'

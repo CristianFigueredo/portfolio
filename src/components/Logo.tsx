@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 export function Logo() {
   return (
@@ -10,9 +10,9 @@ export function Logo() {
       viewBox="0 0 550 470"
     >
       <g
-        fill="#000000"
         fill-rule="nonzero"
         stroke="none"
+        className="fill-white"
         stroke-width="1"
         stroke-linecap="butt"
         stroke-linejoin="miter"
@@ -57,5 +57,5 @@ export function Logo() {
         height="94"
       ></rect>
     </svg>
-  );
+  )
 }

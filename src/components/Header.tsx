@@ -1,17 +1,17 @@
-import { Logo, Button} from ".";
+import { Logo, Button } from '.'
 
 type NavBarLiProps = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}
 
 function NavBarLi({ children }: NavBarLiProps) {
   return (
     <li>
-      <a className="text-xs font-light" href="#">
+      <a className="text-xs font-light text-white" href="#">
         {children}
       </a>
     </li>
-  );
+  )
 }
 
 export const Header: React.FC = () => {
@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
           </ul>
         </nav>
       </div>
-      <Button label="Resume"/>
+      <Button label="Resume" />
     </header>
-  );
-};
+  )
+}

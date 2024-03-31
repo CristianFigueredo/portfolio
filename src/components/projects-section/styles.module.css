@@ -2,17 +2,20 @@
   font-size: 2.5rem;
   font-family: 'Avenir Regular';
   padding-top: 3em;
+  color: rgb(255, 255, 255, 0.8);
 }
 
 .subtitle {
   font-size: 1rem;
   font-family: 'Avenir Regular';
+  color: rgb(255, 255, 255, 0.8);
 }
 
 .description {
   font-size: 1rem;
   font-family: 'Avenir Regular';
   max-width: 40ch;
+  color: rgb(255, 255, 255, 0.6);
 }
 
 .bottom_label {
@@ -22,6 +25,7 @@
   bottom: 30px;
   left: 30px;
   display: none;
+  color: rgb(255, 255, 255, 0.8);
 }
 
 .id {

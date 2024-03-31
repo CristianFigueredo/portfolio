@@ -2,6 +2,7 @@ import { type FC, type PropsWithChildren, useRef, useEffect } from 'react'
 import css from './styles.module.css'
 import { useIntersectionObserver, useScroll, useMediaQuery } from '../../hooks'
 import { MEDIA_QUERY_BREAKPOINTS } from '../../constants/media-query'
+import { cn } from '../../utils/cn'
 
 type TProps = PropsWithChildren<{ text: string; direction?: 'left' | 'right' }>
 
@@ -38,13 +39,13 @@ export const BackgroundTitle: FC<TProps> = ({
   return (
     <section
       ref={container}
-      className={css.container}
+      className={cn(css.container, 'text-white')}
       style={{
         flexDirection: direction === 'left' ? 'row' : 'row-reverse',
         paddingRight: direction === 'left' ? '0' : '50px',
       }}
     >
-      <h3 ref={title} className={css.title}>
+      <h3 ref={title} className={cn(css.title, 'text-white')}>
         {text}
       </h3>
       <div className={css.wrapper}>{children}</div>

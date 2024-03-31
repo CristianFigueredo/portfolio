@@ -1,19 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import '../global.css'
-import { PROFILE_URL } from '../constants/social-media'
-import { BackgroundTitle, ProjectsSection, XDivider, Header } from '../components'
+import {
+  BackgroundTitle,
+  ProjectsSection,
+  XDivider,
+  Header,
+  BackgroundBeams,
+} from '../components'
 import ScrollDown from '../components/ScrollDown.astro'
-import { Icon } from 'astro-icon'
 ---
+
 <Layout>
   <main>
-    <Header  client:only/>
+    <Header client:only />
+    <BackgroundBeams client:only />
     <section class="whoami">
       <h1 class="full_name">Cristian Figueredo</h1>
       <h2 class="role">Mobile Engineer</h2>
       <ScrollDown />
     </section>
+    <XDivider size="50vh" />
     <BackgroundTitle text="ABOUT ME" client:only>
       <p class="description">
         Crafting software that users love isn't just a goal; it's my unwavering
@@ -30,20 +37,6 @@ import { Icon } from 'astro-icon'
       </p>
     </BackgroundTitle>
     <XDivider size="70vh" />
-    <BackgroundTitle text="CONTACT" client:only>
-      <div class="contact-container align-center">
-        <a target="_blank" href={PROFILE_URL.GITHUB}>
-          <Icon name="mdi:github" />
-        </a>
-        <a target="_blank" href={PROFILE_URL.LINKEDIN}>
-          <Icon name="mdi:linkedin" />
-        </a>
-        <a target="_blank" href={PROFILE_URL.TWITTER}>
-          <Icon name="mdi:twitter" />
-        </a>
-      </div>
-    </BackgroundTitle>
-    <XDivider size="30vh" />
   </main>
 </Layout>
 
@@ -62,11 +55,13 @@ import { Icon } from 'astro-icon'
     font-size: 3.5rem;
     font-weight: 100;
     font-family: 'Valencia';
+    color: rgb(255, 255, 255, 0.8);
   }
 
   .role {
     font-size: 1rem;
     font-family: 'Avenir Regular';
+    color: rgb(255, 255, 255, 0.7);
   }
 
   .about,
