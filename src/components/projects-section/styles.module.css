@@ -61,7 +61,7 @@
   }
 
   .title {
-    font-size: 4rem;
+    font-size: 3rem;
     padding-bottom: 0;
     padding-top: 2em;
   }
@@ -72,11 +72,11 @@
   }
 
   .description {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .bottom_label {
-    font-size: 1.5rem;
+    font-size: 1rem;
     display: block;
   }
 }
