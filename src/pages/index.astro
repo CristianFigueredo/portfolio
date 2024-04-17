@@ -7,28 +7,25 @@ import {
   XDivider,
   Header,
   BackgroundBeams,
-  InfiniteMovingCards
+  InfiniteMovingCards,
+  Footer,
 } from '../components'
-import ScrollDown from '../components/ScrollDown.astro'
 import { HeroTopLeftShape, HeroBottomRightShape } from '../components/shape'
 import { testimonials } from '../constants'
-
-
 ---
 
 <Layout>
   <main>
     <div class="w-full h-full">
-    <HeroTopLeftShape client:only />
-    <HeroBottomRightShape client:only />
-    <Header client:only />
-    <BackgroundBeams client:only />
-    <section class="whoami">
-      <h1 class="full_name">Cristian Figueredo</h1>
-      <h2 class="role">Moble Engineer</h2>
-      <ScrollDown />
-    </section>
-    <XDivider size="50vh" />
+      <HeroTopLeftShape client:only />
+      <HeroBottomRightShape client:only />
+      <Header client:only />
+      <BackgroundBeams client:only />
+      <section class="whoami">
+        <h1 class="full_name">Cristian Figueredo</h1>
+        <h2 class="role">Moble Engineer</h2>
+      </section>
+      <XDivider size="50vh" />
     </div>
     <BackgroundTitle text="ABOUT ME" client:only>
       <p class="description">
@@ -48,8 +45,15 @@ import { testimonials } from '../constants'
     <XDivider size="50vh" />
     <div class="flex flex-col w-full justify-center">
       <h3 class="text-white text-4xl self-center mb-5">Testimonials</h3>
-      <InfiniteMovingCards pauseOnHover={false} items={testimonials} speed='slow' client:only />
+      <InfiniteMovingCards
+        pauseOnHover={false}
+        items={testimonials}
+        speed="slow"
+        client:only
+      />
     </div>
+    <XDivider size="30vh" />
+    <Footer client:only />
   </main>
 </Layout>
 <style>
