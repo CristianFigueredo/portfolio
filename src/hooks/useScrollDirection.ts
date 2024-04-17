@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react'
 
 const THRESHOLD = 0
 
-type TDirection = 'up' | 'down'
+type Direction = 'up' | 'down'
 
-export const useScrollDirection = (): TDirection => {
-  const [direction, setDirection] = useState<TDirection>('down')
+export const useScrollDirection = (): Direction => {
+  const [direction, setDirection] = useState<Direction>('down')
 
   useEffect(() => {
     let lastScrollY = window.scrollY,

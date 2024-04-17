@@ -1,4 +1,5 @@
-import { Logo, Button } from '.'
+import { Logo, HoverBorderGradient } from '.'
+import { IconDownload } from "@tabler/icons-react"
 
 type NavBarLiProps = {
   children: React.ReactNode
@@ -20,7 +21,7 @@ export const Header: React.FC = () => {
       <Logo />
       <div>
         <nav>
-          <ul className=" space-x-6 hidden sm:flex">
+          <ul className="space-x-6 hidden sm:flex">
             <NavBarLi>About</NavBarLi>
             <NavBarLi>Projects</NavBarLi>
             <NavBarLi>Services</NavBarLi>
@@ -28,7 +29,13 @@ export const Header: React.FC = () => {
           </ul>
         </nav>
       </div>
-      <Button label="Resume" />
+      <HoverBorderGradient
+        as="button"
+        className='flex items-center'
+      >
+        <IconDownload size={14}  className='mr-1'/>
+        <span>Resume</span>
+      </HoverBorderGradient>
     </header>
   )
 }
