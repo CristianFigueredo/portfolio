@@ -65,8 +65,6 @@ export const BackgroundBeams = React.memo(
       >
         <svg
           className=" z-0 h-full w-full pointer-events-none absolute "
-          width="100%"
-          height="100%"
           viewBox="0 0 696 316"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +103,7 @@ export const BackgroundBeams = React.memo(
                   y2: ['0%', `${93 + Math.random() * 8}%`],
                 }}
                 transition={{
-                  duration: Math.random() * 10 + 10,
+                  duration: Math.random() * 10 + 8,
                   ease: 'easeInOut',
                   repeat: Infinity,
                   delay: Math.random() * 10,

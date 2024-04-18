@@ -4,12 +4,17 @@ import { useIntersectionObserver, useScroll, useMediaQuery } from '../../hooks'
 import { MEDIA_QUERY_BREAKPOINTS } from '../../constants/media-query'
 import { cn } from '../../utils/cn'
 
-type TProps = PropsWithChildren<{ text: string; direction?: 'left' | 'right' }>
+type TProps = PropsWithChildren<{
+  text: string
+  direction?: 'left' | 'right'
+  id?: string
+}>
 
 export const BackgroundTitle: FC<TProps> = ({
   children,
   text,
   direction = 'left',
+  id,
 }) => {
   const title = useRef<HTMLHeadingElement | null>(null)
   const container = useRef<HTMLElement | null>(null)
@@ -39,6 +44,7 @@ export const BackgroundTitle: FC<TProps> = ({
   return (
     <section
       ref={container}
+      id={id}
       className={cn(css.container, 'text-white')}
       style={{
         flexDirection: direction === 'left' ? 'row' : 'row-reverse',
