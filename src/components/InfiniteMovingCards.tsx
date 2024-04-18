@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { cn } from '../utils'
+import type { Testimonial } from '../constants'
+import _truncate from 'lodash.truncate'
 
 export const InfiniteMovingCards = ({
   items,
@@ -8,11 +10,7 @@ export const InfiniteMovingCards = ({
   pauseOnHover = true,
   className,
 }: {
-  items: {
-    quote: string
-    name: string
-    title: string
-  }[]
+  items: Testimonial[]
   direction?: 'left' | 'right'
   speed?: 'fast' | 'normal' | 'slow'
   pauseOnHover?: boolean
@@ -98,15 +96,15 @@ export const InfiniteMovingCards = ({
                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
               <span className=" relative z-20 text-sm leading-[1.6] text-gray-100 font-normal">
-                {item.quote}
+                {_truncate(item.quote, { length: 800 })}
               </span>
               <div className="relative z-20 mt-6 flex flex-row items-center">
                 <span className="flex flex-col gap-1">
                   <span className=" text-sm leading-[1.6] text-gray-400 font-normal">
-                    {item.name}
+                    {item.name} - {item.relation}
                   </span>
                   <span className=" text-sm leading-[1.6] text-gray-400 font-normal">
-                    {item.title}
+                    {item.position}
                   </span>
                 </span>
               </div>
