@@ -27,7 +27,7 @@ export const Screenshot: FC<TProps> = (props) => {
   return (
     <img
       ref={image}
-      class={`${css.screenshot} ${css[`screenshot-${props.index + 1}`]}`}
+      className={`${css.screenshot} ${css[`screenshot-${props.index + 1}`]}`}
       alt="placeholder"
       src={props.src}
       loading="lazy"
