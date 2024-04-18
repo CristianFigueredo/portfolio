@@ -8,7 +8,7 @@ export type Project = {
     folder: string
     files: Array<string>
   }
-  website: string
+  websiteURL: string
 }
 
 export const SCREENSHOTS_FOLDER_PATH = '/images/screenshots'
@@ -19,38 +19,38 @@ export const data: Array<Project> = [
     subtitle: 'Team Lead & Developer',
     description:
       'This app is like a Tinder, but focused on people with disabilities. to break down barriers and make these people comfortable and included.',
-    bottom_label: 'Android & iOS',
+    bottom_label: 'Android & iOS Application',
     id: 1,
     screenshots: {
       folder: 'hugs-dating',
       files: ['main.png', 'explore.png', 'profile.png', 'chat.png'],
     },
-    website: 'https://hugsdating.app/',
+    websiteURL: 'https://hugsdating.app/',
   },
   {
     title: 'Little Inka',
     subtitle: 'Team Lead & Developer',
     description:
       'This app is focused on the sale of sushi and poke and is for the first restaurant in Bellinzona (Canton Ticino - Switzerland) dedicated to this niche.',
-    bottom_label: 'Android & iOS',
+    bottom_label: 'Android & iOS Application + Backend',
     id: 2,
     screenshots: {
       folder: 'little-inka',
       files: ['home.png', 'products.png', 'menu.png', 'contact.png'],
     },
-    website: 'https://littleinka.ch/',
+    websiteURL: 'https://littleinka.ch/',
   },
   {
     title: "Corriere Dell 'Italianità",
     subtitle: 'Team lead & Developer',
     description:
       "The Corriere dell'Italianità App., it serves as a platform for discussion and exchange, aiming to become a leading source of information and ideas for the Italian community in Switzerland.",
-    bottom_label: 'Android & iOS',
+    bottom_label: 'Android & iOS Application + Backend',
     id: 3,
     screenshots: {
       folder: 'corriere-dell-italianita',
       files: ['home.png', 'subscriptions.png', 'post.png', 'settings.png'],
     },
-    website: 'https://corriereitalianita.ch/',
+    websiteURL: 'https://corriereitalianita.ch/',
   },
 ]
