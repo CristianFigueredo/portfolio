@@ -22,8 +22,8 @@ import { testimonials } from '../constants'
       <Header client:only />
       <BackgroundBeams client:only />
       <section class="whoami">
-        <h1 class="full_name">Cristian Figueredo</h1>
-        <h2 class="role">React Native Developer</h2>
+        <h1 class="full_name text-gray-300">Cristian Figueredo</h1>
+        <h2 class="role text-gray-600">React Native Developer</h2>
       </section>
       <XDivider size="50vh" />
     </div>
@@ -36,7 +36,7 @@ import { testimonials } from '../constants'
     <XDivider size="100vh" />
     <ProjectsSection client:only />
     <XDivider size="70vh" />
-    <BackgroundTitle direction="right" text="SKILLS" client:only>
+    <BackgroundTitle id="skills" direction="right" text="SKILLS" client:only>
       <p class="description">
         React • React Native • Tailwind • Typescript • Redux • NextJS • Firebase
         • Jest • Git • Github • GraphQL • Detox • Cypress
@@ -44,7 +44,9 @@ import { testimonials } from '../constants'
     </BackgroundTitle>
     <XDivider size="50vh" />
     <div class="flex flex-col w-full justify-center">
-      <h3 class="text-white text-4xl self-center mb-5">Testimonials</h3>
+      <h3 id="testimonials" class="text-white text-4xl self-center mb-5">
+        Testimonials
+      </h3>
       <InfiniteMovingCards
         pauseOnHover={false}
         items={testimonials}
@@ -71,13 +73,11 @@ import { testimonials } from '../constants'
     font-size: 3.5rem;
     font-weight: 100;
     font-family: 'Valencia';
-    color: rgb(255, 255, 255, 0.8);
   }
 
   .role {
     font-size: 1rem;
     font-family: 'Avenir Regular';
-    color: rgb(255, 255, 255, 0.7);
   }
 
   .about,

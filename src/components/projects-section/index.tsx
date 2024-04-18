@@ -11,7 +11,7 @@ export const ProjectsSection = () => {
     projects[currentGroupOnView]
 
   return (
-    <section className={css.main_container}>
+    <section id="projects" className={css.main_container}>
       <div className={css.container} style={{ opacity: +showInformation }}>
         <p className={css.id}>{id}</p>
         <h3 className={css.title}>{title}</h3>
