@@ -8,7 +8,7 @@ export const testimonials = [
   {
     quote: `I am delighted to recommend Cristian, a React Native developer of exceptional talent, who played a critical role in developing our product, "Smart POS". Cristian's deep expertise in React Native enabled him to craft a mobile solution that not only leverages the full potential of BIMS but also offers an intuitive, user-friendly interface. Cristian's commitment to excellence, collaborative work style, and technical acumen were invaluable to our project, contributing greatly to the successful launch and market acceptance of "Smart POS." I am confident in Cristian's ability to bring substantial value to any team or project with his skills and dedication.`,
     name: 'Víctor Cartes',
-    position: 'Founder/CEO @TIVA.',
+    position: 'CEO @TIVA.',
     relation: 'Managed Cristian directly',
   },
   {
@@ -32,7 +32,7 @@ export const testimonials = [
   {
     quote: `Cristian is an extremely talented software engineer, he has a firm grasp on the core concepts of React and related technologies. During our time together, he was always willing to collaborate with the team, as well as contributing to improve coding standards in our organization. I can only appreciate all the work he did for us and I'm sure he'll be an incredibly valuable asset in his next professional role.`,
     name: 'Juan B. Rodriguez',
-    position: 'Software Engineer',
+    position: 'Software Engineer @Zubale',
     relation: "Was senior to Cristian but didn't manage Cristian directly",
   },
   {
