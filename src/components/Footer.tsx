@@ -24,7 +24,7 @@ const greenAndPurpleLinearGradient =
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#15161A] h-[70vh] relative text-white hidden sm:block">
+    <footer className="bg-[#15161A] relative text-white hidden sm:block">
       <FooterTopBox />
       <FooterBackground>
         <div className="flex h-[50vh] items-center">

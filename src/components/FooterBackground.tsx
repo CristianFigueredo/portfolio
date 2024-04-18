@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react'
 export const FooterBackground: React.FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div className="w-full h-[70vh] relative overflow-hidden">
+    <div className="w-full h-[60vh] relative overflow-hidden">
       <svg
         className="absolute"
         viewBox="0 0 1440 545"
