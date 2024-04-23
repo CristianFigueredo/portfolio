@@ -19,13 +19,26 @@ export const data: Array<Project> = [
     subtitle: 'Team Lead & Developer',
     description:
       'This app is like a Tinder, but focused on people with disabilities. to break down barriers and make these people comfortable and included.',
-    bottom_label: 'Android & iOS Application',
+    bottom_label: 'Android & iOS Application & Backend (Adaptation)',
     id: 1,
     screenshots: {
       folder: 'hugs-dating',
       files: ['main.png', 'explore.png', 'profile.png', 'chat.png'],
     },
     websiteURL: 'https://hugsdating.app/',
+  },
+  {
+    title: "Corriere Dell 'Italianità",
+    subtitle: 'Team lead & Developer',
+    description:
+      "The Corriere dell'Italianità App., it serves as a platform for discussion and exchange, aiming to become a leading source of information and ideas for the Italian community in Switzerland.",
+    bottom_label: 'Android & iOS Application',
+    id: 3,
+    screenshots: {
+      folder: 'corriere-dell-italianita',
+      files: ['home.png', 'subscriptions.png', 'post.png', 'settings.png'],
+    },
+    websiteURL: 'https://corriereitalianita.ch/',
   },
   {
     title: 'Little Inka',
@@ -39,18 +52,5 @@ export const data: Array<Project> = [
       files: ['home.png', 'products.png', 'menu.png', 'contact.png'],
     },
     websiteURL: 'https://littleinka.ch/',
-  },
-  {
-    title: "Corriere Dell 'Italianità",
-    subtitle: 'Team lead & Developer',
-    description:
-      "The Corriere dell'Italianità App., it serves as a platform for discussion and exchange, aiming to become a leading source of information and ideas for the Italian community in Switzerland.",
-    bottom_label: 'Android & iOS Application + Backend',
-    id: 3,
-    screenshots: {
-      folder: 'corriere-dell-italianita',
-      files: ['home.png', 'subscriptions.png', 'post.png', 'settings.png'],
-    },
-    websiteURL: 'https://corriereitalianita.ch/',
   },
 ]
