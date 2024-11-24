@@ -13,7 +13,10 @@ export const ProjectsSection = () => {
 
   return (
     <section id="projects" className={css.main_container}>
-      <div className={css.container} style={{ opacity: +showInformation }}>
+      <div
+        className={css.container}
+        style={{ display: showInformation ? 'block' : 'none' }}
+      >
         <p className="top-8 text-gray-500 text-lg">{id}</p>
         <h3 className={css.title}>{title}</h3>
         <h4 className={css.subtitle}>{subtitle}</h4>
