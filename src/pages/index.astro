@@ -6,9 +6,10 @@ import {
   ProjectsSection,
   XDivider,
   Header,
-  BackgroundBeams,
+  VortexBackground,
   InfiniteMovingCards,
   Footer,
+  VoiceAgent,
 } from '../components'
 import { HeroTopLeftShape, HeroBottomRightShape } from '../components/shape'
 import { testimonials } from '../constants'
@@ -20,11 +21,17 @@ import { testimonials } from '../constants'
       <HeroTopLeftShape client:only />
       <HeroBottomRightShape client:only />
       <Header client:only />
-      <BackgroundBeams client:only />
-      <section class="whoami">
-        <h1 class="full_name text-gray-300">Cristian Figueredo</h1>
-        <h2 class="role text-gray-600">Software Engineer</h2>
-      </section>
+      <VortexBackground client:only>
+        <section class="whoami">
+          <h1
+            class="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center"
+          >
+            Cristian Figueredo
+          </h1>
+          <h2 class="role">Software Engineer</h2>
+          <VoiceAgent client:only />
+        </section>
+      </VortexBackground>
       <XDivider size="50vh" />
     </div>
     <BackgroundTitle text="ABOUT ME" client:only>
@@ -58,6 +65,7 @@ import { testimonials } from '../constants'
     <Footer client:only />
   </main>
 </Layout>
+
 <style>
   .whoami {
     display: flex;
@@ -71,13 +79,17 @@ import { testimonials } from '../constants'
 
   .full_name {
     font-size: 3.5rem;
-    font-weight: 100;
-    font-family: 'Valencia';
+    color: white;
   }
 
   .role {
     font-size: 1rem;
     font-family: 'Avenir Regular';
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    margin-top: 0.5rem;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
   }
 
   .about,
@@ -170,7 +182,8 @@ import { testimonials } from '../constants'
       padding-left: 5vw;
     }
     .role {
-      font-size: 1.5rem;
+      font-size: 1rem;
+      margin-top: 1rem;
     }
   }
 
