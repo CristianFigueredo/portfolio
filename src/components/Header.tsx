@@ -1,6 +1,7 @@
-import { Logo, HoverBorderGradient } from '.'
-import { IconDownload } from '@tabler/icons-react'
+import { Logo } from '.'
 import { RESUME_URL } from '../constants/urls'
+import { Button } from './Button'
+import { Download } from 'lucide-react'
 
 const menuOptions = ['Projects', 'Skills', 'Testimonials', 'Contact'] as const
 
@@ -14,40 +15,36 @@ type NavBarLiProps = {
 function MenuOption({ children, onClick }: NavBarLiProps) {
   return (
     <li
-      className="text-xs font-light text-white cursor-pointer"
+      className="text-sm font-light text-white/80 hover:text-white cursor-pointer transition-all duration-300 hover:scale-105 relative group"
       onClick={() => onClick(children)}
     >
-      {children}
+      <span>{children}</span>
+      <span className="absolute w-0 h-[1px] bg-gradient-to-r from-purple-500 to-blue-500 left-0 -bottom-1 transition-all duration-300 group-hover:w-full" />
     </li>
   )
 }
 
 export const Header: React.FC = () => {
   return (
-    <header className="flex w-full items-center justify-between p-2 px-[5%] pt-5 z-50 relative">
+    <header className="top-0 left-0 right-0 backdrop-blur-sm bg-black/30 flex w-full items-center justify-between p-2 px-[5%] pt-5 z-50">
       <Logo />
-      <div>
-        <nav>
-          <ul className="space-x-6 hidden sm:flex">
-            {menuOptions.map((option) => (
-              <MenuOption
-                onClick={() => handleMenuOptionClick(option)}
-                key={option}
-              >
-                {option}
-              </MenuOption>
-            ))}
-          </ul>
-        </nav>
-      </div>
-      <HoverBorderGradient
-        as="button"
+      <nav className="hidden sm:block">
+        <ul className="flex space-x-8">
+          {menuOptions.map((option) => (
+            <MenuOption
+              onClick={() => handleMenuOptionClick(option)}
+              key={option}
+            >
+              {option}
+            </MenuOption>
+          ))}
+        </ul>
+      </nav>
+      <Button
+        label="Resume"
+        icon={<Download size={14} strokeWidth={2} />}
         onClick={() => window.open(RESUME_URL)}
-        className="flex items-center"
-      >
-        <IconDownload size={14} className="mr-1" />
-        <span>Resume</span>
-      </HoverBorderGradient>
+      />
     </header>
   )
 }
