@@ -1,10 +1,6 @@
 import type { PropsWithChildren } from 'react'
 import { Logo, ButtonSecondary, FooterBackground } from '.'
-import {
-  IconBrandLinkedin,
-  IconBrandGithub,
-  IconBrandTwitter,
-} from '@tabler/icons-react'
+import { Linkedin, Github, Twitter } from 'lucide-react'
 import { PROFILE_URL } from '../constants'
 
 const FooterTopBox = () => {
@@ -60,13 +56,13 @@ export const Footer = () => {
                 <IconContainer
                   onClick={() => window.open(PROFILE_URL.LINKEDIN)}
                 >
-                  <IconBrandLinkedin size={20} />
+                  <Linkedin size={14} />
                 </IconContainer>
                 <IconContainer onClick={() => window.open(PROFILE_URL.GITHUB)}>
-                  <IconBrandGithub size={20} />
+                  <Github size={14} />
                 </IconContainer>
                 <IconContainer onClick={() => window.open(PROFILE_URL.TWITTER)}>
-                  <IconBrandTwitter size={20} />
+                  <Twitter size={14} />
                 </IconContainer>
               </div>
             </div>
