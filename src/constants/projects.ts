@@ -33,7 +33,7 @@ export const data: Array<Project> = [
     description:
       "The Corriere dell'Italianità App., it serves as a platform for discussion and exchange, aiming to become a leading source of information and ideas for the Italian community in Switzerland.",
     bottom_label: 'Android & iOS Application',
-    id: 3,
+    id: 2,
     screenshots: {
       folder: 'corriere-dell-italianita',
       files: ['home.png', 'subscriptions.png', 'post.png', 'settings.png'],
@@ -46,7 +46,7 @@ export const data: Array<Project> = [
     description:
       'This app is focused on the sale of sushi and poke and is for the first restaurant in Bellinzona (Canton Ticino - Switzerland) dedicated to this niche.',
     bottom_label: 'Android & iOS Application + Backend',
-    id: 2,
+    id: 3,
     screenshots: {
       folder: 'little-inka',
       files: ['home.png', 'products.png', 'menu.png', 'contact.png'],
