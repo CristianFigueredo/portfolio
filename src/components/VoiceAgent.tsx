@@ -43,7 +43,7 @@ export function VoiceAgent() {
     } else {
       setIsLoading(true)
 
-      vapi.current?.start(assistantID).finally(() => {
+      vapi.current?.start(assistantID).catch(() => {
         setIsLoading(false)
       })
     }
