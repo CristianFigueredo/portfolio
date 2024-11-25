@@ -38,23 +38,8 @@ export function VoiceAgent() {
       vapi.stop()
     } else {
       setIsLoading(true)
-      // Replace with your assistant ID or configuration
-      vapi.start({
-        model: {
-          provider: 'openai',
-          model: 'gpt-3.5-turbo',
-          messages: [
-            {
-              role: 'system',
-              content: 'You are a helpful assistant.',
-            },
-          ],
-        },
-        voice: {
-          provider: 'playht',
-          voiceId: 'jennifer',
-        },
-      })
+      const assistantID = '501ec22c-2dfa-4178-aee5-f716ba5bb5bc'
+      vapi.start(assistantID)
     }
   }
 
@@ -80,7 +65,11 @@ export function VoiceAgent() {
             <Phone strokeWidth={1.5} className="w-4 h-4 text-indigo-500" />
           )}
           <span className="text-sm">
-            {isLoading ? 'Connecting...' : isCallActive ? 'End' : 'AI'}
+            {isLoading
+              ? 'Connecting...'
+              : isCallActive
+              ? 'End'
+              : 'Speak with my AI twin'}
           </span>
         </button>
       </div>
