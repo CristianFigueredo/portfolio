@@ -37,6 +37,7 @@ export const Screenshots: FC<TProps> = ({
     >
       {projects.map(({ screenshots: { files, folder } }, index) => (
         <ScreenshotGroup
+          key={folder}
           folder={folder}
           files={files}
           onViewport={() => setCurrentGroupIndex(index)}

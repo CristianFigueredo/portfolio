@@ -3,8 +3,9 @@ import Vapi from '@vapi-ai/web'
 import { Loader2, Phone, PhoneOff } from 'lucide-react'
 import { cn } from '../utils/cn'
 
-// Initialize Vapi instance (replace with your public key)
-const vapi = new Vapi('cbdf1e22-f328-4b4c-b214-e5d2bb296dbb')
+const assistantID = '501ec22c-2dfa-4178-aee5-f716ba5bb5bc'
+const publicKey = 'cbdf1e22-f328-4b4c-b214-e5d2bb296dbb'
+const vapi = new Vapi(publicKey)
 
 export function VoiceAgent() {
   const [isCallActive, setIsCallActive] = useState(false)
@@ -38,8 +39,10 @@ export function VoiceAgent() {
       vapi.stop()
     } else {
       setIsLoading(true)
-      const assistantID = '501ec22c-2dfa-4178-aee5-f716ba5bb5bc'
-      vapi.start(assistantID)
+
+      vapi.start(assistantID).finally(() => {
+        setIsLoading(false)
+      })
     }
   }
 

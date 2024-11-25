@@ -33,15 +33,19 @@ export const ScreenshotGroup: FC<TProps> = ({
 
   return (
     <div ref={container} className={css.screenshots}>
-      {Array.from({ length: 4 }).map((_, index) => (
-        <Screenshot
-          src={`${SCREENSHOTS_FOLDER_PATH}/${folder}/${files[index]}`}
-          index={index}
-          accelerate={inView}
-          scale={config.scales[index]}
-          speed={config.speeds[index]}
-        />
-      ))}
+      {Array.from({ length: 4 }).map((_, index) => {
+        const sourcePath = `${SCREENSHOTS_FOLDER_PATH}/${folder}/${files[index]}`
+        return (
+          <Screenshot
+            key={sourcePath}
+            src={sourcePath}
+            index={index}
+            accelerate={inView}
+            scale={config.scales[index]}
+            speed={config.speeds[index]}
+          />
+        )
+      })}
     </div>
   )
 }
