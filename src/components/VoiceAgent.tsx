@@ -1,28 +1,29 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Vapi from '@vapi-ai/web'
 import { Loader2, Phone, PhoneOff } from 'lucide-react'
 import { cn } from '../utils/cn'
 
-const assistantID = '501ec22c-2dfa-4178-aee5-f716ba5bb5bc'
-const publicKey = 'cbdf1e22-f328-4b4c-b214-e5d2bb296dbb'
-const vapi = new Vapi(publicKey)
-
 export function VoiceAgent() {
   const [isCallActive, setIsCallActive] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const vapi = useRef<Vapi | null>(null)
 
   useEffect(() => {
+    const publicKey = 'cbdf1e22-f328-4b4c-b214-e5d2bb296dbb'
+    const vapiInstance = new Vapi(publicKey)
+    vapi.current = vapiInstance
+
     // Set up event listeners
-    vapi.on('call-start', () => {
+    vapiInstance.on('call-start', () => {
       setIsLoading(false)
       setIsCallActive(true)
     })
 
-    vapi.on('call-end', () => {
+    vapiInstance.on('call-end', () => {
       setIsCallActive(false)
     })
 
-    vapi.on('error', (e) => {
+    vapiInstance.on('error', (e) => {
       console.error(e)
       setIsLoading(false)
       setIsCallActive(false)
@@ -30,17 +31,19 @@ export function VoiceAgent() {
 
     // Cleanup listeners on unmount
     return () => {
-      vapi.stop()
+      vapiInstance.stop()
     }
   }, [])
 
   const handleToggleCall = async () => {
+    const assistantID = '501ec22c-2dfa-4178-aee5-f716ba5bb5bc'
+    if (!vapi.current) return
     if (isCallActive) {
-      vapi.stop()
+      vapi.current?.stop()
     } else {
       setIsLoading(true)
 
-      vapi.start(assistantID).finally(() => {
+      vapi.current?.start(assistantID).finally(() => {
         setIsLoading(false)
       })
     }
