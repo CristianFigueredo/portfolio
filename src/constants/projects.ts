@@ -31,7 +31,7 @@ export const data: Array<Project> = [
     title: "Corriere Dell 'Italianità",
     subtitle: 'Team lead & Developer',
     description:
-      "The Corriere dell'Italianità App., it serves as a platform for discussion and exchange, aiming to become a leading source of information and ideas for the Italian community in Switzerland.",
+      'It serves as a platform for discussion and exchange, aiming to become a leading source of information and ideas for the Italian community in Switzerland.',
     bottom_label: 'Android & iOS Application',
     id: 2,
     screenshots: {
