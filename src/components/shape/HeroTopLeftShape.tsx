@@ -1,7 +1,7 @@
 export const HeroTopLeftShape = () => {
   return (
     <svg
-      className="absolute top-0 left-0 hidden sm:block opacity-50"
+      className="absolute top-0 left-0 hidden sm:block opacity-50 z-0 "
       width="500"
       height="400"
       viewBox="0 0 598 493"

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import Vapi from '@vapi-ai/web'
 import { Loader2, Phone, PhoneOff } from 'lucide-react'
 import { cn } from '../utils/cn'
+import { Toaster, toast } from 'sonner'
 
 export function VoiceAgent() {
   const [isCallActive, setIsCallActive] = useState(false)
@@ -27,6 +28,9 @@ export function VoiceAgent() {
       console.error(e)
       setIsLoading(false)
       setIsCallActive(false)
+      toast.error(
+        'Failed to connect to the AI assistant, please try again later.'
+      )
     })
 
     // Cleanup listeners on unmount
@@ -44,6 +48,7 @@ export function VoiceAgent() {
       setIsLoading(true)
 
       vapi.current?.start(assistantID).catch(() => {
+        toast.error('Failed to connect to the AI assistant')
         setIsLoading(false)
       })
     }
@@ -51,6 +56,7 @@ export function VoiceAgent() {
 
   return (
     <div className="fixed bottom-4 right-4">
+      <Toaster />
       <div className="relative group">
         <div className="absolute -inset-[1px] bg-gradient-to-r from-indigo-500 via-purple-500 to-blue-500 rounded-full opacity-70 group-hover:opacity-100 transition duration-200" />
         <button
