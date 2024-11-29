@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState, type FC } from 'react'
-import { data as projects } from '../../constants/projects'
+import { projectsInEnglish, projectsInSpanish } from '../../constants/projects'
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver'
 import { useScrollDirection } from '../../hooks/useScrollDirection'
 import { noop } from '../../hooks/shared'
 import { ScreenshotGroup } from '../screenshot-group'
+import { getLanguageFromURL } from '../../i18n/utils'
 
 type TProps = {
   onVisibilityChange?: (visibility: boolean) => void
@@ -15,6 +16,8 @@ export const Screenshots: FC<TProps> = ({
   onVisibleGroupChange = noop,
 }) => {
   const [currentGroupIndex, setCurrentGroupIndex] = useState(0)
+  const locale = getLanguageFromURL()
+  const projects = locale === 'en' ? projectsInEnglish : projectsInSpanish
 
   const container = useRef<HTMLDivElement | null>(null)
   const { inView } = useIntersectionObserver(container)

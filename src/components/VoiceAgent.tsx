@@ -3,11 +3,15 @@ import Vapi from '@vapi-ai/web'
 import { Loader2, Phone, PhoneOff } from 'lucide-react'
 import { cn } from '../utils/cn'
 import { Toaster, toast } from 'sonner'
+import { getLanguageFromURL } from '../i18n/utils'
+import { useTranslations } from '../i18n/utils'
 
 export function VoiceAgent() {
   const [isCallActive, setIsCallActive] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const vapi = useRef<Vapi | null>(null)
+  const locale = getLanguageFromURL()
+  const translated = useTranslations(locale)
 
   useEffect(() => {
     const publicKey = 'cbdf1e22-f328-4b4c-b214-e5d2bb296dbb'
@@ -24,13 +28,10 @@ export function VoiceAgent() {
       setIsCallActive(false)
     })
 
-    vapiInstance.on('error', (e) => {
-      console.error(e)
+    vapiInstance.on('error', () => {
       setIsLoading(false)
       setIsCallActive(false)
-      toast.error(
-        'Failed to connect to the AI assistant, please try again later.'
-      )
+      toast.error(translated('Cannot start voice agent'))
     })
 
     // Cleanup listeners on unmount
@@ -40,16 +41,23 @@ export function VoiceAgent() {
   }, [])
 
   const handleToggleCall = async () => {
-    const assistantID = '501ec22c-2dfa-4178-aee5-f716ba5bb5bc'
-    if (!vapi.current) return
+    const assistantIdByLocale = {
+      en: '501ec22c-2dfa-4178-aee5-f716ba5bb5',
+      es: '6429ceee-94ca-4b6d-a7b4-c568af828e87',
+    }
+
+    if (!assistantIdByLocale[locale] || !vapi.current) {
+      toast.error(translated('Cannot start voice agent'))
+      return
+    }
     if (isCallActive) {
-      vapi.current?.stop()
+      vapi.current.stop()
     } else {
       setIsLoading(true)
 
-      vapi.current?.start(assistantID).catch(() => {
-        toast.error('Failed to connect to the AI assistant')
+      vapi.current.start(assistantIdByLocale[locale]).catch(() => {
         setIsLoading(false)
+        toast.error(translated('Cannot start voice agent'))
       })
     }
   }
@@ -78,10 +86,10 @@ export function VoiceAgent() {
           )}
           <span className="text-sm">
             {isLoading
-              ? 'Connecting...'
+              ? translated('Connecting...')
               : isCallActive
-              ? 'End'
-              : 'Speak with my AI twin'}
+              ? translated('End')
+              : translated('AI Twin')}
           </span>
         </button>
       </div>

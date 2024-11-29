@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import css from './styles.module.css'
 import { Screenshots } from '../screenshots'
-import { data as projects } from '../../constants/projects'
+import { projectsInEnglish, projectsInSpanish } from '../../constants/projects'
 import { IconArrowRight } from '@tabler/icons-react'
+import { getLanguageFromURL } from '../../i18n/utils'
 
 export const ProjectsSection = () => {
+  const locale = getLanguageFromURL()
+  const projects = locale === 'en' ? projectsInEnglish : projectsInSpanish
   const [showInformation, setShowInformation] = useState(false)
   const [currentGroupOnView, setCurrentGroupOnView] = useState(0)
 

@@ -1,0 +1,210 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import '../../global.css'
+import {
+  BackgroundTitle,
+  ProjectsSection,
+  XDivider,
+  Header,
+  VortexBackground,
+  InfiniteMovingCards,
+  Footer,
+  VoiceAgent,
+} from '../../components'
+import { HeroTopLeftShape, HeroBottomRightShape } from '../../components/shape'
+import { testimonialsInEnglish, testimonialsInSpanish } from '../../constants'
+import { getLanguageFromURL, useTranslations } from '../../i18n/utils'
+
+const locale = getLanguageFromURL(Astro.url)
+const translated = useTranslations(locale)
+const testimonials =
+  locale === 'en' ? testimonialsInEnglish : testimonialsInSpanish
+---
+
+<Layout>
+  <main>
+    <div class="w-full h-full">
+      <VortexBackground client:only>
+        <Header client:only />
+        <section class="whoami">
+          <HeroTopLeftShape />
+          <HeroBottomRightShape />
+          <h1
+            class="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center"
+          >
+            Cristian Figueredo
+          </h1>
+          <h2 class="role">Software Engineer</h2>
+          <VoiceAgent client:only />
+        </section>
+      </VortexBackground>
+      <XDivider size="50vh" />
+    </div>
+    <BackgroundTitle text={translated('About me').toUpperCase()} client:only>
+      <p class="description">{translated('aboutMe')}</p>
+    </BackgroundTitle>
+    <XDivider size="100vh" />
+    <ProjectsSection client:only />
+    <XDivider size="70vh" />
+    <BackgroundTitle id="skills" direction="right" text="SKILLS" client:only>
+      <p class="description">
+        React • React Native • Tailwind • Typescript • Redux • NextJS • Firebase
+        • Jest • Git • Github • GraphQL • Detox • Cypress
+      </p>
+    </BackgroundTitle>
+    <XDivider size="50vh" />
+    <div class="flex flex-col w-full justify-center">
+      <h3 id="testimonials" class="text-white text-4xl self-center mb-5">
+        {translated('Testimonials')}
+      </h3>
+      <InfiniteMovingCards
+        pauseOnHover={false}
+        items={testimonials}
+        speed="slow"
+        client:only
+      />
+    </div>
+    <XDivider size="30vh" />
+    <Footer client:only />
+  </main>
+</Layout>
+
+<style>
+  .whoami {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 80vh;
+    width: 100vw;
+    animation: fadeIn 2.5s;
+  }
+
+  .full_name {
+    font-size: 3.5rem;
+    color: white;
+  }
+
+  .role {
+    font-size: 1rem;
+    font-family: 'Avenir Regular';
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    margin-top: 0.5rem;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  }
+
+  .about,
+  .skills,
+  .contact {
+    position: relative;
+    height: 15vh;
+    margin-bottom: 50vw;
+  }
+
+  .description {
+    font-family: 'Avenir Regular';
+    font-size: 1.1rem;
+    max-width: 40ch;
+    top: 3ch;
+    text-align: center;
+    left: 2ch;
+  }
+
+  [astro-icon] {
+    width: 2.5em;
+    height: 2.5em;
+    margin-right: 5vw;
+    transition: transform 0.5s ease-out 0s;
+  }
+  [astro-icon]:hover {
+    transform: scale(1.2);
+  }
+
+  .contact > div {
+    position: absolute;
+    margin-left: 30%;
+    top: min(12vh, 50px);
+  }
+
+  /* sm (portrait tablets and large phones, 600px and up) */
+  @media (min-width: 600px) {
+    .full_name {
+      font-size: 4rem;
+    }
+    .role {
+      font-size: 1rem;
+    }
+  }
+
+  /* md (landscape phones, tablets, 768px and up) */
+  @media (min-width: 768px) {
+    .full_name {
+      font-size: 5rem;
+    }
+    .role {
+      font-size: 1.5rem;
+    }
+    .description {
+      max-width: 40ch;
+      left: 5ch;
+      font-size: 1.2rem;
+    }
+    [astro-icon] {
+      width: 4em;
+      height: 4em;
+    }
+  }
+
+  /* lg (laptops/desktops, 992px and up) */
+  @media (min-width: 992px) {
+    .full_name {
+      font-size: 6rem;
+    }
+    .role {
+      font-size: 1.3rem;
+    }
+    .description {
+      font-size: 1.8rem;
+      max-width: 50ch;
+      padding-left: 5ch;
+    }
+    [astro-icon] {
+      width: 5em;
+      height: 5em;
+    }
+  }
+
+  /* xl (large laptops and desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    .full_name {
+      font-size: 7rem;
+    }
+    .contact-container {
+      padding-left: 5vw;
+    }
+    .role {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+  }
+
+  /* xl (ultra-wide desktops, 1536px and up) */
+  @media (min-width: 1536px) {
+    .description {
+      font-size: 2rem;
+      max-width: 60ch;
+      left: 5ch;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
