@@ -5,6 +5,9 @@ const config = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx,astro}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
       animation: {
         shimmer: 'shimmer 2s linear infinite',
         scroll:
