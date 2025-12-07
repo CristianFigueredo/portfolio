@@ -18,6 +18,7 @@ interface VortexProps {
 }
 
 export const VortexBackground = (props: VortexProps) => {
+  return props.children
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const containerRef = useRef(null)
   const particleCount = props.particleCount || 700

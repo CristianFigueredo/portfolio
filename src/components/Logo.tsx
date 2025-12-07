@@ -1,12 +1,19 @@
 import React from 'react'
 
-export function Logo() {
+type LogoProps = {
+  width?: number
+  height?: number
+  className?: string
+}
+
+export function Logo({ width = 45, height = 45, className }: LogoProps) {
   return (
     <svg
+      className={className}
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      width={45}
-      height={45}
+      width={width}
+      height={height}
       viewBox="0 0 500 470"
     >
       <g

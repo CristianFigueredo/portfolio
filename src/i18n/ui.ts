@@ -31,6 +31,31 @@ const defaultTranslations = {
   'Living, learning, & leveling up': 'Living, learning, & leveling up',
   'one day at a time.': 'one day at a time.',
   "Let's Do This": "Let's Do This",
+  'hero.description':
+    'Explore my collection of modern web and mobile applications built with cutting-edge technologies.',
+  'hero.cta': 'View Projects',
+  'hero.stats.projects': 'Projects',
+  'hero.stats.years': 'Years Experience',
+  'hero.stats.clients': 'Happy Clients',
+  'Have a project in mind?': 'Have a project in mind?',
+  'Let’s turn your ideas into reality. I’m always open to discussing new projects, creative ideas or opportunities to be part of your visions.':
+    'Let’s turn your ideas into reality. I’m always open to discussing new projects, creative ideas or opportunities to be part of your visions.',
+  "Let's work together": "Let's work together",
+  'Building digital experiences with focus on performance, design and user experience.':
+    'Building digital experiences with focus on performance, design and user experience.',
+  'Building digital experiences': 'Building digital experiences',
+  'Send me an email': 'Send me an email',
+  'Turning ideas into real life products is my calling.':
+    'Turning ideas into real life products is my calling.',
+  'Let’s turn your ideas into reality.': 'Let’s turn your ideas into reality.',
+  Menu: 'Menu',
+  'Get in touch': 'Get in touch',
+  'Available for new projects': 'Available for new projects',
+  'Let’s build something amazing together.':
+    'Let’s build something amazing together.',
+  'Email copied!': 'Email copied!',
+  'Copy email': 'Copy email',
+  'Designed & Built with passion.': 'Designed & Built with passion.',
 }
 
 export const ui: Record<Locale, typeof defaultTranslations> = {
@@ -58,5 +83,30 @@ export const ui: Record<Locale, typeof defaultTranslations> = {
     'Living, learning, & leveling up': 'Viviendo, aprendiendo',
     'one day at a time.': 'y mejorando día a día.',
     "Let's Do This": 'Contáctame',
+    'hero.description':
+      'Explora mi colección de aplicaciones web y móviles modernas construidas con tecnologías de vanguardia.',
+    'hero.cta': 'Ver Proyectos',
+    'hero.stats.projects': 'Proyectos',
+    'hero.stats.years': 'Años de Experiencia',
+    'hero.stats.clients': 'Clientes Satisfechos',
+    'Have a project in mind?': '¿Tienes un proyecto en mente?',
+    'Let’s turn your ideas into reality. I’m always open to discussing new projects, creative ideas or opportunities to be part of your visions.':
+      'Convirtamos tus ideas en realidad. Siempre estoy dispuesto a discutir nuevos proyectos, ideas creativas u oportunidades para ser parte de tus visiones.',
+    "Let's work together": 'Trabajemos juntos',
+    'Building digital experiences with focus on performance, design and user experience.':
+      'Construyendo experiencias digitales con foco en rendimiento, diseño y experiencia de usuario.',
+    'Building digital experiences': 'Construyendo experiencias digitales',
+    'Send me an email': 'Envíame un correo',
+    'Turning ideas into real life products is my calling.':
+      'Convertir ideas en productos reales es mi vocación.',
+    'Let’s turn your ideas into reality.': 'Hagamos realidad tus ideas.',
+    Menu: 'Menú',
+    'Get in touch': 'Ponte en contacto',
+    'Available for new projects': 'Disponible para nuevos proyectos',
+    'Let’s build something amazing together.':
+      'Construyamos algo increíble juntos.',
+    'Email copied!': '¡Correo copiado!',
+    'Copy email': 'Copiar correo',
+    'Designed & Built with passion.': 'Diseñado y construido con pasión.',
   },
 }
