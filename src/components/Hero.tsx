@@ -136,7 +136,7 @@ export function Hero() {
                   </div>
 
                   {/* Column 3 */}
-                  <div className="flex flex-col gap-6 mt-16">
+                  <div className="flex flex-col gap-3 mt-16">
                     {column3.map((card, idx) => (
                       <ProjectCard
                         key={`${card.project.id}-${card.screenshotIndex}`}
