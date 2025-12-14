@@ -2,7 +2,7 @@ import { Logo } from '.'
 import { RESUME_URL } from '../constants/urls'
 import { useTranslations, getLanguageFromURL } from '../i18n/utils'
 import { Download } from 'lucide-react'
-import { Button } from './Button'
+import { ButtonPrimary } from './ButtonPrimary'
 
 type IMenuOption = {
   id: string
@@ -85,7 +85,7 @@ export const Header: React.FC = () => {
           ))}
         </div>
         <div className="flex items-center gap-4 shrink-0">
-          <Button
+          <ButtonPrimary
             label={translated('Resume')}
             icon={<Download size={14} strokeWidth={2} />}
             onClick={() => window.open(RESUME_URL[locale])}
