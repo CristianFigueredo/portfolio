@@ -5,6 +5,7 @@ import { SCREENSHOTS_FOLDER_PATH } from '../../constants/projects'
 import { Screenshot } from '../screenshot/'
 
 type TProps = {
+  id?: string
   folder: string
   files: string[]
   onViewport: () => void
@@ -17,6 +18,7 @@ const config = {
 }
 
 export const ScreenshotGroup: FC<TProps> = ({
+  id,
   folder,
   files,
   onViewport,
@@ -32,7 +34,12 @@ export const ScreenshotGroup: FC<TProps> = ({
   }, [inView])
 
   return (
-    <div ref={container} className={css.screenshots}>
+    <div
+      id={id}
+      ref={container}
+      className={css.screenshots}
+      style={{ scrollMarginTop: 120 }}
+    >
       {Array.from({ length: 4 }).map((_, index) => {
         const sourcePath = `${SCREENSHOTS_FOLDER_PATH}/${folder}/${files[index]}`
         return (

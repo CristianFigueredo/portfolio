@@ -18,6 +18,15 @@ export function Hero() {
     }
   }
 
+  const handleViewSpecificProject = (folder: string) => {
+    const group = document.getElementById(`project-group-${folder}`)
+    if (group) {
+      group.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      return
+    }
+    handleViewProjects()
+  }
+
   return (
     <section className="relative z-10 pt-20 pb-24 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -116,6 +125,11 @@ export function Hero() {
                         column={0}
                         row={idx}
                         screenshotIndex={card.screenshotIndex}
+                        onClick={() =>
+                          handleViewSpecificProject(
+                            card.project.screenshots.folder
+                          )
+                        }
                       />
                     ))}
                   </div>
@@ -131,6 +145,11 @@ export function Hero() {
                         column={1}
                         row={idx}
                         screenshotIndex={card.screenshotIndex}
+                        onClick={() =>
+                          handleViewSpecificProject(
+                            card.project.screenshots.folder
+                          )
+                        }
                       />
                     ))}
                   </div>
@@ -146,6 +165,11 @@ export function Hero() {
                         column={2}
                         row={idx}
                         screenshotIndex={card.screenshotIndex}
+                        onClick={() =>
+                          handleViewSpecificProject(
+                            card.project.screenshots.folder
+                          )
+                        }
                       />
                     ))}
                   </div>

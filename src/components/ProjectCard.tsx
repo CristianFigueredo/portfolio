@@ -8,6 +8,7 @@ type ProjectCardProps = {
   column: number
   row: number
   screenshotIndex?: number
+  onClick?: () => void
 }
 
 export function ProjectCard({
@@ -17,6 +18,7 @@ export function ProjectCard({
   column,
   row,
   screenshotIndex = 0,
+  onClick,
 }: ProjectCardProps) {
   // Use the specified screenshot or default to first one
   const screenshotFile =
@@ -29,37 +31,69 @@ export function ProjectCard({
   const rotations = [-6, 0, 6]
   const rotation = rotations[column % rotations.length]
 
-  // Animation delay based on column and row (in seconds)
-  const floatDelay = (column * 0.2 + row * 0.1) % 3
+  // Floating animation tuning (use Framer Motion only to avoid transform conflicts)
+  const floatDelay = (column * 0.2 + row * 0.1) % 2.5
+  const floatAmplitude = 16 + ((row + column) % 3) * 2
+  const floatDuration = 5.2 + (column % 3) * 0.4 + (row % 2) * 0.3
 
   return (
-    <motion.img
-      initial={{ opacity: 0, scale: 0.8, y: 50 }}
-      animate={{
-        opacity: 1,
-        scale: 1,
-        y: 0,
-      }}
-      whileHover={{
-        scale: 1.05,
-        rotate: 0,
-        zIndex: total + 1,
-        transition: { duration: 0.3 },
-      }}
+    <motion.div
+      initial={{ opacity: 0, scale: 0.85, y: 50 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{
         delay: index * 0.15,
         duration: 0.6,
         ease: 'easeOut',
       }}
-      className={`${size.w} ${size.h} relative cursor-pointer project-card-float object-cover group-hover:scale-110 transition-transform duration-700`}
-      style={{
-        transform: `rotate(${rotation}deg)`,
-        transformOrigin: 'center center',
-        animationDelay: `${floatDelay}s`,
+      whileHover={{
+        scale: 1.08,
+        y: -8,
+        zIndex: total + 1,
+        transition: { duration: 0.2 },
       }}
-      onClick={() => window.open(project.websiteURL, '_blank')}
-      alt={project.title}
-      src={mainImage}
-    />
+      className={`${size.w} ${size.h} relative ${
+        onClick ? 'cursor-pointer' : 'cursor-default'
+      }`}
+      style={{ zIndex: index }}
+      onClick={onClick}
+      role={onClick ? 'button' : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      onKeyDown={
+        onClick
+          ? (e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                onClick()
+              }
+            }
+          : undefined
+      }
+    >
+      <motion.div
+        className="w-full h-full"
+        animate={{ y: [0, -floatAmplitude, 0] }}
+        transition={{
+          duration: floatDuration,
+          ease: 'easeInOut',
+          repeat: Infinity,
+          repeatType: 'mirror',
+          delay: floatDelay,
+        }}
+      >
+        <motion.img
+          className="w-full h-full object-cover will-change-transform select-none"
+          style={{ transformOrigin: 'center center' }}
+          initial={{ rotate: rotation }}
+          animate={{ rotate: rotation }}
+          whileHover={{
+            rotate: 0,
+            transition: { type: 'spring', stiffness: 260, damping: 18 },
+          }}
+          draggable={false}
+          alt={project.title}
+          src={mainImage}
+        />
+      </motion.div>
+    </motion.div>
   )
 }
