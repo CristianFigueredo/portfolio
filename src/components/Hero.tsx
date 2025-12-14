@@ -25,8 +25,8 @@ export function Hero() {
         <div className="lg:col-span-5 space-y-12 relative z-10">
           <div className="space-y-6">
             <h1 className="text-6xl lg:text-7xl font-semibold tracking-tighter leading-[1.05] font-['Avenir_Bold']">
-              <span className="text-white">Discover My</span> <br />
-              <span className="text-gradient">Portfolio Projects</span>
+              <span className="text-white">Cristian</span> <br />
+              <span className="text-neutral-500">Figueredo</span>
             </h1>
 
             <p className="text-lg text-neutral-400 max-w-lg font-light leading-relaxed font-['Avenir_Regular']">
