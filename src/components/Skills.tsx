@@ -14,21 +14,37 @@ export function Skills() {
   const x = useTransform(scrollYProgress, [0, 1], ['-10%', '10%'])
 
   const skills = {
-    Frontend: [
-      'React',
-      'Next.js',
-      'Astro',
+    'Mobile & Frontend': [
+      'JavaScript',
       'TypeScript',
-      'Tailwind CSS',
-      'Framer Motion',
+      'React',
+      'React Native',
+      'Expo',
+      'Redux',
+      'GraphQL',
+      'Axios',
+      'HTML',
+      'CSS',
+      'SVG',
     ],
-    Backend: ['Node.js', 'Express', 'Python', 'FastAPI', 'PostgreSQL', 'Redis'],
-    'Tools & Others': ['Git', 'Docker', 'AWS', 'Figma', 'CI/CD', 'Testing'],
+    Testing: ['Jest', 'Detox', 'Maestro'],
+    'CI / CD': ['GitHub Actions'],
+    'Tools & Workflow': ['Git', 'GitHub'],
+    'AI & Multimodal': [
+      'LLM integrations',
+      'Multimodal models (image / video / audio)',
+    ],
+    Languages: [
+      'English (professional)',
+      'Spanish (professional)',
+      'Portuguese (professional)',
+    ],
   }
 
   return (
     <section
       ref={containerRef}
+      id="skills"
       className="relative py-32 overflow-hidden bg-black"
     >
       {/* Background Text */}
@@ -49,8 +65,8 @@ export function Skills() {
           </h2>
           <p className="text-xl text-neutral-400 font-['Avenir_Regular'] leading-relaxed max-w-md">
             {locale === 'es'
-              ? 'Me especializo en construir aplicaciones web escalables y de alto rendimiento utilizando tecnologías modernas y mejores prácticas.'
-              : 'I specialize in building scalable, high-performance web applications using modern technologies and best practices.'}
+              ? 'Construyo productos móviles y web con foco en calidad, automatización, y experiencia de usuario. También trabajo integrando LLMs y modelos multimodales (imagen / video / audio).'
+              : 'I build mobile and web products with a focus on quality, automation, and user experience. I also integrate LLMs and multimodal models (image / video / audio).'}
           </p>
         </div>
 
