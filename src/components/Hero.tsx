@@ -57,7 +57,7 @@ export function Hero() {
           <div className="flex items-center gap-12 pt-4">
             <div>
               <div className="text-4xl font-bold text-white tracking-tight font-['Avenir_Bold']">
-                {projects.length}+
+                20+
               </div>
               <div className="text-xs text-neutral-500 font-medium mt-2 uppercase tracking-widest font-['Avenir_Regular']">
                 {t('hero.stats.projects')}
@@ -66,21 +66,13 @@ export function Hero() {
             <div className="w-px h-12 bg-white/10"></div>
             <div>
               <div className="text-4xl font-bold text-white tracking-tight font-['Avenir_Bold']">
-                5+
+                6+
               </div>
               <div className="text-xs text-neutral-500 font-medium mt-2 uppercase tracking-widest font-['Avenir_Regular']">
                 {t('hero.stats.years')}
               </div>
             </div>
             <div className="w-px h-12 bg-white/10"></div>
-            <div>
-              <div className="text-4xl font-bold text-white tracking-tight font-['Avenir_Bold']">
-                10+
-              </div>
-              <div className="text-xs text-neutral-500 font-medium mt-2 uppercase tracking-widest font-['Avenir_Regular']">
-                {t('hero.stats.clients')}
-              </div>
-            </div>
           </div>
         </div>
 
