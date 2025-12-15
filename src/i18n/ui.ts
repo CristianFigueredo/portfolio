@@ -32,7 +32,7 @@ const defaultTranslations = {
   'one day at a time.': 'one day at a time.',
   "Let's Do This": "Let's Do This",
   'hero.description':
-    'Explore my collection of modern web and mobile applications built with cutting-edge technologies.',
+    'I help teams ship fast, beautiful products that users actually enjoy.',
   'hero.cta': 'View Projects',
   'hero.stats.projects': 'Projects',
   'hero.stats.years': 'Years Experience',
@@ -84,7 +84,7 @@ export const ui: Record<Locale, typeof defaultTranslations> = {
     'one day at a time.': 'y mejorando día a día.',
     "Let's Do This": 'Contáctame',
     'hero.description':
-      'Explora mi colección de aplicaciones web y móviles modernas construidas con tecnologías de vanguardia.',
+      'Ayudo a equipos a lanzar hermosos productos rapidamente que la gente realmente disfruta.',
     'hero.cta': 'Ver Proyectos',
     'hero.stats.projects': 'Proyectos',
     'hero.stats.years': 'Años de Experiencia',
