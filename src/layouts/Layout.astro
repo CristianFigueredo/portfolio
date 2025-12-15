@@ -4,6 +4,11 @@ interface Props {
 }
 
 const { title } = Astro.props
+
+const acceptLanguage = (
+  Astro.request?.headers.get('accept-language') || ''
+).toLowerCase()
+const isSpanish = acceptLanguage.includes('es')
 ---
 
 <!doctype html>
@@ -26,7 +31,29 @@ const { title } = Astro.props
       rel="stylesheet"
     />
   </head>
-  <body class="bg-black">
-    <slot />
+  <body class="bg-black overflow-hidden lg:overflow-auto">
+    <div class="flex lg:hidden min-h-screen p-6 items-center justify-center">
+      <div
+        class="w-full max-w-[520px] rounded-3xl p-6 border border-white/10 bg-white/[0.04] backdrop-blur-xl"
+      >
+        <div
+          class="font-['Avenir_Bold'] text-[28px] tracking-[-0.02em] text-white/90"
+        >
+          {isSpanish ? 'Versión de escritorio' : 'Desktop only'}
+        </div>
+        <div
+          class="mt-2.5 font-['Avenir_Regular'] text-base leading-relaxed text-white/65"
+        >
+          {
+            isSpanish
+              ? 'Este sitio no está disponible en móvil. Ábrelo desde una computadora.'
+              : 'This site isn’t available on mobile. Please open it on a desktop.'
+          }
+        </div>
+      </div>
+    </div>
+    <div class="hidden lg:block">
+      <slot />
+    </div>
   </body>
 </html>

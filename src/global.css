@@ -44,6 +44,9 @@ a {
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   background: var(--border-gradient);
@@ -52,6 +55,7 @@ a {
 
 .text-gradient {
   background: linear-gradient(to right, #fff, #a5a5a5);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
